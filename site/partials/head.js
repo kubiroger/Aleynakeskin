@@ -4,7 +4,7 @@
 // Each page declares its own metadata in a PAGE-META comment at the top of the
 // file; scripts/build.js reads it and calls head() with the result.
 
-const SITE = "https://aleynakeskin.com"; // TODO: yayin oncesi gercek alan adiyla degistir
+const SITE = "https://aleynakeskin.vercel.app"; // TODO: alan adi baglanınca gercek adresle degistir
 
 // Design tokens -- the approved "warm earth" palette. Do not swap these for
 // colours sampled from the current logo file: that logo is a placeholder the
