@@ -255,7 +255,7 @@ function buildPage(filePath, file, posts) {
   content = replaceBetween(content, file, "HEADER", renderHeader(file, prefix));
   content = replaceBetween(content, file, "MOBILE_MENU", renderMobileMenu(file, prefix));
   content = replaceBetween(content, file, "NAV_SCRIPT", NAVBAR_SCRIPT);
-  content = replaceBetween(content, file, "FOOTER", renderFooter(prefix));
+  content = replaceBetween(content, file, "FOOTER", renderFooter(prefix, file));
 
   const latest = posts.slice(0, 3).map((p) => renderPostCard(p, prefix)).join("\n");
   content = replaceBetween(content, file, "LATEST_POSTS", latest);

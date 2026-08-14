@@ -98,6 +98,41 @@ const SHARED_CSS = `
   .prose strong { font-weight: 600; }
   .prose blockquote { border-left: 3px solid #C89B6B; padding-left: 1.15rem; margin: 1.5rem 0; color: #6B635C; }
 
+  /* --- Mobil: uygulama benzeri alt sekme cubugu --- */
+  #tab-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 46;
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    background: rgba(255,255,255,.94); backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(43,39,36,.08);
+    padding-bottom: env(safe-area-inset-bottom); }
+  .tab-item { display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 4px; min-height: 58px; padding: 8px 4px; color: #6B635C;
+    font-size: 11px; line-height: 1.1; text-align: center;
+    -webkit-tap-highlight-color: transparent; transition: color .2s ease; }
+  .tab-item svg { width: 22px; height: 22px; }
+  .tab-item.is-active { color: #2B2724; }
+  .tab-item.is-active svg { color: #A97C4F; }
+  .tab-item:active { background: rgba(43,39,36,.05); }
+  .tab-item-wa { color: #128C4A; }
+  /* Alt cubuk icerigi ortmesin */
+  @media (max-width: 1023px) { body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); } }
+  /* id secicisi Tailwind'in lg:hidden sinifindan guclu; masaustunde elle gizliyoruz */
+  @media (min-width: 1024px) { #tab-bar { display: none; } }
+
+  /* --- Mobil: acilir footer bolumleri --- */
+  .footer-group > summary { list-style: none; cursor: pointer; display: flex;
+    align-items: center; justify-content: space-between; gap: 1rem;
+    padding: .875rem 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .footer-group > summary::-webkit-details-marker { display: none; }
+  .footer-group[open] > summary .footer-chevron { transform: rotate(180deg); }
+  .footer-chevron { transition: transform .25s ease; opacity: .6; }
+  .footer-panel { padding-bottom: .75rem; }
+  .footer-group:not([open]) > .footer-panel { display: none; }
+  @media (min-width: 768px) {
+    .footer-group > summary { border-top: 0; padding: 0 0 1rem; cursor: default; pointer-events: none; }
+    .footer-group:not([open]) > .footer-panel { display: block; }
+    .footer-panel { padding-bottom: 0; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     #site-header, #site-header > div, .dropdown-panel, .menu-panel, .chevron,
