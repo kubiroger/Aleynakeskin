@@ -3,6 +3,8 @@ title: "Okul öncesi dönemde ince motor becerileri destekleyen 7 ev etkinliği"
 date: 2026-08-05
 slug: okul-oncesi-ince-motor-beceriler
 excerpt: "Kalem tutmayı kalemle çalışmak zorunda değilsiniz. Mutfakta, banyoda ve oyun köşesinde el becerilerini destekleyen, malzeme gerektirmeyen yedi etkinlik."
+metaTitle: "İnce Motor Becerileri Destekleyen 7 Ev Etkinliği"
+metaDescription: "Okul öncesi dönemde el becerilerini destekleyen, evde malzeme gerektirmeyen yedi etkinlik. Mandal, hamur, mutfak işleri ve dikey yüzey çalışmaları."
 cover: assets/placeholder/ph-blog-2.webp
 tags: [İnce motor, Okul öncesi, Ev etkinlikleri]
 draft: false

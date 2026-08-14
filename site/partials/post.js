@@ -73,9 +73,11 @@ ${others}
 }
 
 function renderPostPage(post, others) {
+  // Arama sonucunda kesilmesin diye: uzun basliklarda front-matter'daki kisa
+  // metaTitle/metaDescription kullanilir, yoksa yazininkiler.
   const meta = {
-    title: `${post.title} | Ergoterapist Aleyna Keskin`,
-    description: post.excerpt,
+    title: post.metaTitle || `${post.title} | Aleyna Keskin`,
+    description: post.metaDescription || post.excerpt,
     path: `blog/${post.slug}.html`,
   };
 

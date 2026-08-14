@@ -3,6 +3,8 @@ title: "Duyu bütünleme nedir, çocuğumda nasıl fark ederim?"
 date: 2026-07-28
 slug: duyu-butunleme-nedir
 excerpt: "Etiketli kıyafeti çıkarmak isteyen, salıncaktan hiç doymayan ya da kalabalıkta bunalan çocuklar. Duyusal işlemlemenin ne olduğunu ve evde nelere dikkat edebileceğinizi anlattım."
+metaTitle: "Duyu Bütünleme Nedir? Çocukta Nasıl Fark Edilir?"
+metaDescription: "Duyusal işlemleme nedir, çocukta hangi belirtilerle fark edilir, evde nelere dikkat edilir? Ergoterapist Aleyna Keskin anlatıyor."
 cover: assets/placeholder/ph-blog-1.webp
 tags: [Duyu bütünleme, Ebeveynlik]
 draft: false

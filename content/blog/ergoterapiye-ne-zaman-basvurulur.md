@@ -3,6 +3,8 @@ title: "Ergoterapiye ne zaman başvurmalı?"
 date: 2026-08-12
 slug: ergoterapiye-ne-zaman-basvurulur
 excerpt: "\"Biraz daha bekleyelim, belki geçer\" ile \"acaba geç mi kaldık\" arasında sıkışan aileler için: hangi gözlemler bir görüşmeyi gerektirir, beklemek ne zaman makul?"
+metaTitle: "Ergoterapiye Ne Zaman Başvurmalı?"
+metaDescription: "Beklemek ne zaman makul, hangi gözlemler bir değerlendirmeyi gerektirir? Çocuğunuz için doğru zamanı belirlemenize yardımcı bir çerçeve."
 cover: assets/placeholder/ph-blog-3.webp
 tags: [Ergoterapi, Ebeveynlik]
 draft: false

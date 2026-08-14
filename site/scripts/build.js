@@ -41,6 +41,8 @@ function parsePost(filePath) {
     date,
     slug,
     excerpt: data.excerpt || "",
+    metaTitle: data.metaTitle || "",
+    metaDescription: data.metaDescription || "",
     cover: data.cover || "",
     tags: data.tags || [],
     draft: Boolean(data.draft),
@@ -98,6 +100,126 @@ function writePostPages(posts) {
   });
 }
 
+// --- structured data -------------------------------------------------------
+
+const BUSINESS = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE}/#isletme`,
+  name: "Ergoterapist Aleyna Keskin",
+  description:
+    "Çocukların gelişim alanlarını destekleyen ergoterapi ve ailelere yönelik danışmanlık hizmeti.",
+  url: `${SITE}/`,
+  telephone: "+905011774208",
+  email: "aleynaakeskin1@gmail.com",
+  image: `${SITE}/assets/og-image.jpg`,
+  logo: `${SITE}/assets/logo.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Esentepe Mah. Kasap Sk. Aslan Apt. No: 11 D: 4",
+    addressLocality: "Şişli",
+    addressRegion: "İstanbul",
+    addressCountry: "TR",
+  },
+  areaServed: { "@type": "City", name: "İstanbul" },
+  sameAs: ["https://instagram.com/ergoterapist.aleyna"],
+  // MÜŞTERİDEN: calisma saatleri geldiginde openingHoursSpecification eklenecek.
+};
+
+const PERSON = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Aleyna Keskin",
+  jobTitle: "Ergoterapist",
+  url: `${SITE}/hakkimda.html`,
+  telephone: "+905011774208",
+  email: "aleynaakeskin1@gmail.com",
+  worksFor: { "@id": `${SITE}/#isletme` },
+  sameAs: ["https://instagram.com/ergoterapist.aleyna"],
+};
+
+const stripTags = (s) =>
+  s
+    .replace(/<[^>]*>/g, "")
+    .replace(/&ldquo;|&rdquo;/g, '"')
+    .replace(/&bull;/g, "•")
+    .replace(/&rarr;/g, "→")
+    .replace(/&amp;/g, "&")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+/** Pulls question/answer pairs out of the page's <details class="faq"> blocks. */
+function extractFaqs(html) {
+  const faqs = [];
+  const re = /<details class="faq[^"]*"[^>]*>[\s\S]*?<summary[^>]*>([\s\S]*?)<\/summary>\s*<p[^>]*>([\s\S]*?)<\/p>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const question = stripTags(m[1]);
+    const answer = stripTags(m[2]);
+    if (question && answer) faqs.push({ question, answer });
+  }
+  return faqs;
+}
+
+function faqSchema(faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
+
+/** Which schemas a page carries, derived from its filename and its own markup. */
+function schemasFor(file, meta, content, posts) {
+  const schemas = [];
+  const faqs = extractFaqs(content);
+
+  if (file === "index.html") schemas.push(BUSINESS);
+  if (file === "hakkimda.html") schemas.push(PERSON);
+
+  if (file.startsWith("hizmet-")) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: meta.title.split("|")[0].trim(),
+      description: meta.description,
+      url: `${SITE}/${file}`,
+      serviceType: "Ergoterapi",
+      provider: { "@id": `${SITE}/#isletme` },
+      areaServed: { "@type": "City", name: "İstanbul" },
+      audience: { "@type": "PeopleAudience", suggestedMinAge: 0 },
+    });
+  }
+
+  if (file.startsWith("blog/")) {
+    const slug = file.slice("blog/".length, -".html".length);
+    const post = posts.find((p) => p.slug === slug);
+    if (post) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        dateModified: post.date,
+        image: post.cover ? `${SITE}/${post.cover}` : undefined,
+        author: { "@type": "Person", name: "Aleyna Keskin" },
+        publisher: { "@id": `${SITE}/#isletme` },
+        mainEntityOfPage: `${SITE}/${file}`,
+        inLanguage: "tr-TR",
+      });
+    }
+  }
+
+  if (faqs.length) schemas.push(faqSchema(faqs));
+  return schemas;
+}
+
 // --- page shell ------------------------------------------------------------
 
 function readPageMeta(content, file) {
@@ -128,7 +250,8 @@ function buildPage(filePath, file, posts) {
   const meta = readPageMeta(content, file);
   const prefix = file.includes("/") ? "../" : "";
 
-  content = replaceBetween(content, file, "HEAD", head({ ...meta, prefix }));
+  const jsonLd = schemasFor(file, meta, content, posts);
+  content = replaceBetween(content, file, "HEAD", head({ ...meta, prefix, jsonLd }));
   content = replaceBetween(content, file, "HEADER", renderHeader(file, prefix));
   content = replaceBetween(content, file, "MOBILE_MENU", renderMobileMenu(file, prefix));
   content = replaceBetween(content, file, "NAV_SCRIPT", NAVBAR_SCRIPT);
