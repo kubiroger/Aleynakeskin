@@ -55,7 +55,7 @@ ${panel}
   }).join("\n");
 
   return `<header id="site-header" class="fixed top-4 inset-x-0 z-50 px-4">
-  <div class="relative max-w-6xl mx-auto bg-white/95 backdrop-blur rounded-2xl shadow-lg shadow-ink/5">
+  <div class="relative max-w-[1440px] mx-auto bg-white/95 backdrop-blur rounded-2xl shadow-lg shadow-ink/5">
     <div class="flex items-center justify-between pl-4 pr-2 py-2.5">
       <a href="${prefix}index.html" class="shrink-0" aria-label="Anasayfa">${logo("h-10", prefix)}</a>
 

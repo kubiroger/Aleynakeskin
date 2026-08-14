@@ -37,7 +37,7 @@ function renderPost(post, others) {
     </div>
   </header>
 
-  ${post.cover ? `<div class="max-w-4xl mx-auto px-6 -mt-4">
+  ${post.cover ? `<div class="max-w-[1440px] mx-auto px-6 -mt-4">
     <img src="../${post.cover}" alt="" width="1200" height="800" class="w-full h-[280px] sm:h-[400px] object-cover rounded-4xl">
   </div>` : ""}
 
@@ -63,7 +63,7 @@ ${post.html}
 
   ${others ? `<!-- DIGER YAZILAR -->
   <section class="py-14 sm:py-16 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-[1440px] mx-auto">
       <h2 class="font-display text-2xl sm:text-3xl">Diğer yazılar</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
 ${others}

@@ -10,7 +10,7 @@ function renderFooter(prefix = "") {
   const year = 2026;
 
   return `<footer class="bg-ink text-white/80 mt-24">
-  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
+  <div class="max-w-[1440px] mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
 
     <div>
       <img src="${prefix}assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-11 w-auto brightness-0 invert opacity-95">
@@ -41,7 +41,7 @@ ${serviceLinks(prefix)}
   </div>
 
   <div class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+    <div class="max-w-[1440px] mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
       <p>&copy; ${year} Ergoterapist Aleyna Keskin. Tüm hakları saklıdır.</p>
       <a href="${prefix}kvkk.html" class="hover:text-white/80 transition">KVKK ve Gizlilik</a>
     </div>
