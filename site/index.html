@@ -246,9 +246,9 @@ tailwind.config = { theme: { extend: {
     <img src="assets/hero-anasayfa.webp"
          alt="Ahşap ve renkli oyuncaklarla çalışan ergoterapist ve çocuk, arkada izleyen anne"
          width="1448" height="1086"
-         class="absolute inset-0 w-full h-full object-cover [object-position:72%_50%] lg:inset-y-auto lg:top-1/2 lg:-translate-y-1/2 lg:left-auto lg:right-0 lg:h-auto lg:w-[60%] lg:max-w-none lg:object-contain lg:[mask-image:linear-gradient(to_right,transparent_0,black_160px)]">
+         class="absolute inset-0 w-full h-full object-cover [object-position:72%_50%] lg:object-center">
     <!-- Metnin okunmasi icin sicak katman: mobilde dikey, masaustunde yatay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-cream/85 via-cream/65 to-cream/35 lg:hidden" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/80 to-cream/40 lg:bg-gradient-to-r lg:from-cream/35 lg:via-transparent lg:to-transparent" aria-hidden="true"></div>
 
     <div class="relative w-full max-w-[1440px] mx-auto px-6 pt-28 pb-12 sm:pt-32 sm:pb-16">
       <div class="max-w-xl">
@@ -318,57 +318,52 @@ tailwind.config = { theme: { extend: {
         </p>
       </div>
 
-      <div class="expand-row mt-10 fade-up">
-        <a href="hizmet-ergoterapi.html" class="card group relative rounded-4xl overflow-hidden h-[400px] bg-white block">
-          <img src="assets/ergoterapi-kart.webp" alt="Masada ahşap şekil oyuncaklarıyla çalışan ergoterapist ve çocuk" width="900" height="1022" loading="lazy" class="card-img absolute inset-0 w-full h-full object-cover">
-          <span class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"></span>
-          <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-            <span class="block font-display text-2xl">Ergoterapi</span>
-            <span class="block text-sm text-white/80 mt-2 leading-relaxed">Günlük hayattaki katılımı anlamlı ve amaca yönelik etkinlikler aracılığıyla destekler.</span>
-            <span class="inline-block text-sm text-gold-soft mt-4">Detaylı bilgi &rarr;</span>
-          </span>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 fade-up">
+        <a href="hizmet-ergoterapi.html" class="card group block rounded-4xl overflow-hidden shadow-sm hover:shadow-md transition" style="background-color:#D0A080">
+          <img src="assets/ergoterapi-kart.webp" alt="Masada ahşap şekil oyuncaklarıyla çalışan ergoterapist ve çocuk" width="900" height="600" loading="lazy" class="w-full h-auto">
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">Ergoterapi</h3>
+            <p class="text-sm text-ink/75 mt-2 leading-relaxed">Günlük hayattaki katılımı anlamlı ve amaca yönelik etkinlikler aracılığıyla destekler.</p>
+            <span class="inline-block text-sm font-medium text-ink mt-4 group-hover:underline underline-offset-4">Detaylı bilgi &rarr;</span>
+          </div>
         </a>
-
-        <a href="hizmet-duyu-butunleme.html" class="card group relative rounded-4xl overflow-hidden h-[400px] bg-white block">
-          <img src="assets/duyu-butunleme-kart.webp" alt="Duyusal oyun malzemeleriyle çalışan ergoterapist ve çocuk" width="900" height="1022" loading="lazy" class="card-img absolute inset-0 w-full h-full object-cover">
-          <span class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"></span>
-          <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-            <span class="block font-display text-2xl">Duyu Bütünleme</span>
-            <span class="block text-sm text-white/80 mt-2 leading-relaxed">Duyusal bilgiyi işleme biçimini anlayıp çevresine daha rahat uyum sağlamasına eşlik eder.</span>
-            <span class="inline-block text-sm text-gold-soft mt-4">Detaylı bilgi &rarr;</span>
-          </span>
+        <a href="hizmet-duyu-butunleme.html" class="card group block rounded-4xl overflow-hidden shadow-sm hover:shadow-md transition" style="background-color:#C9A094">
+          <img src="assets/duyu-butunleme-kart.webp" alt="Duyusal oyun malzemeleriyle çalışan ergoterapist ve çocuk" width="900" height="600" loading="lazy" class="w-full h-auto">
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">Duyu Bütünleme</h3>
+            <p class="text-sm text-ink/75 mt-2 leading-relaxed">Duyusal bilgiyi işleme biçimini anlayıp çevresine daha rahat uyum sağlamasına eşlik eder.</p>
+            <span class="inline-block text-sm font-medium text-ink mt-4 group-hover:underline underline-offset-4">Detaylı bilgi &rarr;</span>
+          </div>
         </a>
-
-        <a href="hizmet-oz-bakim-becerileri.html" class="card group relative rounded-4xl overflow-hidden h-[400px] bg-white block">
-          <img src="assets/oz-bakim-kart.webp" alt="Çocuğun ayakkabısını giymesine yardım eden ergoterapist" width="900" height="1022" loading="lazy" class="card-img absolute inset-0 w-full h-full object-cover">
-          <span class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"></span>
-          <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-            <span class="block font-display text-2xl">Öz Bakım Becerileri</span>
-            <span class="block text-sm text-white/80 mt-2 leading-relaxed">Giyinme, beslenme ve kişisel bakımda yaşına uygun bağımsızlığı güçlendirir.</span>
-            <span class="inline-block text-sm text-gold-soft mt-4">Detaylı bilgi &rarr;</span>
-          </span>
+        <a href="hizmet-oz-bakim-becerileri.html" class="card group block rounded-4xl overflow-hidden shadow-sm hover:shadow-md transition" style="background-color:#B8A38A">
+          <img src="assets/oz-bakim-kart.webp" alt="Çocuğun ayakkabısını giymesine yardım eden ergoterapist" width="900" height="600" loading="lazy" class="w-full h-auto">
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">Öz Bakım Becerileri</h3>
+            <p class="text-sm text-ink/75 mt-2 leading-relaxed">Giyinme, beslenme ve kişisel bakımda yaşına uygun bağımsızlığı güçlendirir.</p>
+            <span class="inline-block text-sm font-medium text-ink mt-4 group-hover:underline underline-offset-4">Detaylı bilgi &rarr;</span>
+          </div>
         </a>
-      </div>
-
-      <div class="expand-row mt-5 fade-up">
-        <a href="hizmet-gunluk-yasam.html" class="card group relative rounded-4xl overflow-hidden h-[400px] bg-white block">
-          <img src="assets/gunluk-yasam-kart.webp" alt="Okul çantasını birlikte hazırlayan ergoterapist ve çocuk" width="900" height="1022" loading="lazy" class="card-img absolute inset-0 w-full h-full object-cover">
-          <span class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"></span>
-          <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-            <span class="block font-display text-2xl">Günlük Yaşam Aktiviteleri</span>
-            <span class="block text-sm text-white/80 mt-2 leading-relaxed">Ev, okul ve sosyal ortamdaki rutinlerde katılımı ve bağımsızlığı artırmayı hedefler.</span>
-            <span class="inline-block text-sm text-gold-soft mt-4">Detaylı bilgi &rarr;</span>
-          </span>
+        <a href="hizmet-gunluk-yasam.html" class="card group block rounded-4xl overflow-hidden shadow-sm hover:shadow-md transition" style="background-color:#CAAE8A">
+          <img src="assets/gunluk-yasam-kart.webp" alt="Okul çantasını birlikte hazırlayan ergoterapist ve çocuk" width="900" height="600" loading="lazy" class="w-full h-auto">
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">Günlük Yaşam Aktiviteleri</h3>
+            <p class="text-sm text-ink/75 mt-2 leading-relaxed">Ev, okul ve sosyal ortamdaki rutinlerde katılımı ve bağımsızlığı artırmayı hedefler.</p>
+            <span class="inline-block text-sm font-medium text-ink mt-4 group-hover:underline underline-offset-4">Detaylı bilgi &rarr;</span>
+          </div>
         </a>
-
-        <a href="hizmet-aile-danismanligi.html" class="card group relative rounded-4xl overflow-hidden h-[400px] bg-white block">
-          <img src="assets/aile-danismanlik-kart.webp" alt="Ebeveynle görüşen ergoterapist, yanda çizim yapan çocuk" width="900" height="1022" loading="lazy" class="card-img absolute inset-0 w-full h-full object-cover">
-          <span class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"></span>
-          <span class="absolute inset-x-0 bottom-0 p-6 text-white">
-            <span class="block font-display text-2xl">Çocuk ve Aile Danışmanlığı</span>
-            <span class="block text-sm text-white/80 mt-2 leading-relaxed">Ebeveynin evde uygulayabileceği somut yaklaşımları birlikte belirler.</span>
-            <span class="inline-block text-sm text-gold-soft mt-4">Detaylı bilgi &rarr;</span>
-          </span>
+        <a href="hizmet-aile-danismanligi.html" class="card group block rounded-4xl overflow-hidden shadow-sm hover:shadow-md transition" style="background-color:#A09993">
+          <img src="assets/aile-danismanlik-kart.webp" alt="Ebeveynle görüşen ergoterapist, yanda çizim yapan çocuk" width="900" height="600" loading="lazy" class="w-full h-auto">
+          <div class="p-6">
+            <h3 class="font-display text-2xl text-ink">Çocuk ve Aile Danışmanlığı</h3>
+            <p class="text-sm text-ink/75 mt-2 leading-relaxed">Ebeveynin evde uygulayabileceği somut yaklaşımları birlikte belirler.</p>
+            <span class="inline-block text-sm font-medium text-ink mt-4 group-hover:underline underline-offset-4">Detaylı bilgi &rarr;</span>
+          </div>
+        </a>
+        <a href="iletisim.html" class="group flex flex-col justify-center rounded-4xl border border-gold/40 bg-cream p-8 hover:bg-gold-soft transition">
+          <svg class="text-gold-deep" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <h3 class="font-display text-2xl mt-5">Hangisi bize uygun, emin değilim</h3>
+          <p class="text-sm text-ink-soft mt-3 leading-relaxed">Çok sık duyduğum bir cümle. Doğru başlığı seçmek sizin işiniz değil — ilk görüşmede gözlemlerinizi dinleyip birlikte belirliyoruz.</p>
+          <span class="inline-block text-sm font-medium text-gold-deep mt-5 group-hover:underline underline-offset-4">İlk görüşme için ulaşın &rarr;</span>
         </a>
       </div>
     </div>
