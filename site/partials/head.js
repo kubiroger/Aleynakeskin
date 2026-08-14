@@ -117,7 +117,7 @@ const SHARED_CSS = `
  * @param {string} [meta.image]     OG image path relative to site root
  * @param {object|object[]} [meta.jsonLd] structured data appended as-is
  */
-function head({ title, description, path = "", image = "assets/og-image.jpg", jsonLd }) {
+function head({ title, description, path = "", image = "assets/og-image.jpg", jsonLd, prefix = "" }) {
   const url = `${SITE}/${path}`;
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   const schemaTags = schemas
@@ -131,9 +131,9 @@ function head({ title, description, path = "", image = "assets/og-image.jpg", js
 <link rel="canonical" href="${url}">
 <meta name="theme-color" content="#2B2724">
 
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="${prefix}favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32.png">
+<link rel="apple-touch-icon" href="${prefix}assets/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">

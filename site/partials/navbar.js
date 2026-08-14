@@ -19,21 +19,22 @@ const LINKS = [
   { href: "iletisim.html", label: "İletişim" },
 ];
 
-const logo = (cls) =>
-  `<img src="assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="${cls} w-auto">`;
+const logo = (cls, prefix) =>
+  `<img src="${prefix}assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="${cls} w-auto">`;
 
 const isActive = (page, href) => href === page || (page === "index.html" && href === "index.html");
 
-function renderHeader(page) {
+// `prefix` is "../" for pages nested under blog/, "" for pages at the site root.
+function renderHeader(page, prefix = "") {
   const desktopLinks = LINKS.map((l) => {
     const active = isActive(page, l.href) || (l.children && l.children.some((c) => c.href === page));
     const base = `px-3.5 py-2 rounded-full transition hover:bg-cream ${active ? "text-ink font-medium" : "text-ink-soft hover:text-ink"}`;
 
-    if (!l.children) return `        <a href="${l.href}" class="${base}">${l.label}</a>`;
+    if (!l.children) return `        <a href="${prefix}${l.href}" class="${base}">${l.label}</a>`;
 
     const panel = l.children
       .map(
-        (c) => `            <a href="${c.href}" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+        (c) => `            <a href="${prefix}${c.href}" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">${c.title}</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">${c.blurb}</span>
             </a>`
@@ -41,7 +42,7 @@ function renderHeader(page) {
       .join("\n");
 
     return `        <div class="nav-item relative">
-          <a href="${l.href}" class="${base} inline-flex items-center gap-1">
+          <a href="${prefix}${l.href}" class="${base} inline-flex items-center gap-1">
             ${l.label}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </a>
@@ -56,7 +57,7 @@ ${panel}
   return `<header id="site-header" class="fixed top-4 inset-x-0 z-50 px-4">
   <div class="relative max-w-6xl mx-auto bg-white/95 backdrop-blur rounded-2xl shadow-lg shadow-ink/5">
     <div class="flex items-center justify-between pl-4 pr-2 py-2.5">
-      <a href="index.html" class="shrink-0" aria-label="Anasayfa">${logo("h-10")}</a>
+      <a href="${prefix}index.html" class="shrink-0" aria-label="Anasayfa">${logo("h-10", prefix)}</a>
 
       <nav class="hidden lg:flex items-center gap-0.5 text-sm" aria-label="Ana menü">
 ${desktopLinks}
@@ -77,15 +78,15 @@ ${desktopLinks}
 </header>`;
 }
 
-function renderMobileMenu(page) {
+function renderMobileMenu(page, prefix = "") {
   const items = LINKS.map((l) => {
     const active = isActive(page, l.href);
     const cls = `block px-3 py-3.5 rounded-xl transition hover:bg-cream ${active ? "text-ink font-medium" : "text-ink"}`;
 
-    if (!l.children) return `    <a href="${l.href}" class="${cls}">${l.label}</a>`;
+    if (!l.children) return `    <a href="${prefix}${l.href}" class="${cls}">${l.label}</a>`;
 
     const sub = l.children
-      .map((c) => `        <a href="${c.href}" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">${c.title}</a>`)
+      .map((c) => `        <a href="${prefix}${c.href}" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">${c.title}</a>`)
       .join("\n");
 
     return `    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream transition text-left" aria-expanded="false">
@@ -94,7 +95,7 @@ function renderMobileMenu(page) {
     </button>
     <div class="menu-panel grid overflow-hidden">
       <div class="min-h-0 pl-3 pb-1">
-        <a href="${l.href}" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream transition">Tüm hizmetler</a>
+        <a href="${prefix}${l.href}" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream transition">Tüm hizmetler</a>
 ${sub}
       </div>
     </div>`;
@@ -104,7 +105,7 @@ ${sub}
 
 <aside id="mobile-menu" class="fixed top-0 right-0 z-[60] h-full w-[86%] max-w-sm bg-white translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl" aria-hidden="true" aria-label="Mobil menü">
   <div class="flex items-center justify-between px-5 py-4 border-b border-ink/10 shrink-0">
-    ${logo("h-9")}
+    ${logo("h-9", prefix)}
     <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream transition">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>

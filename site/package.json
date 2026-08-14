@@ -4,7 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "node --test scripts/"
+    "test": "node --test scripts/build.test.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
