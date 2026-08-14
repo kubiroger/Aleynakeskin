@@ -237,9 +237,14 @@ tailwind.config = { theme: { extend: {
 <main id="main">
 
   <!-- HERO -->
-  <section class="bg-cream pt-32 pb-16 sm:pt-40 sm:pb-20 px-6">
-    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 items-center">
-      <div>
+  <!-- Gorseli degistirmek icin asagidaki tek <img> yeterli. -->
+  <section class="relative min-h-[68vh] flex items-center overflow-hidden bg-cream">
+    <img src="assets/ergoterapi.webp" alt="Masada ahşap şekil oyuncaklarıyla çalışan ergoterapist ve çocuk" width="1448" height="1086"
+         class="absolute inset-0 w-full h-full object-cover [object-position:72%_50%] lg:object-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/80 to-cream/40 lg:bg-gradient-to-r lg:from-cream/35 lg:via-transparent lg:to-transparent" aria-hidden="true"></div>
+
+    <div class="relative w-full max-w-[1440px] mx-auto px-6 pt-28 pb-12 sm:pt-32 sm:pb-16">
+      <div class="max-w-xl">
         <nav aria-label="Konum" class="text-sm text-ink-soft">
           <a href="index.html" class="hover:text-ink transition">Anasayfa</a>
           <span class="mx-2 text-gold">/</span>
@@ -253,7 +258,6 @@ tailwind.config = { theme: { extend: {
         </p>
         <a href="iletisim.html" class="inline-block bg-ink text-white font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition mt-8">Randevu Talep Edin</a>
       </div>
-      <img src="assets/placeholder/ph-ergoterapi.webp" alt="Masada küp oyunu oynayan çocuk" width="800" height="1067" class="w-full h-[320px] sm:h-[420px] object-cover rounded-4xl">
     </div>
   </section>
 

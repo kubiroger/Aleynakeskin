@@ -1,38 +1,46 @@
 # Görsel envanteri
 
-`ph-` önekli her dosya **geçicidir**. Site yayına alınmadan önce hepsi gerçek
-görsellerle değiştirilmelidir — kontrol listesi: `content/yayin-oncesi.md`.
+Sitedeki görsellerin çoğu müşteri tarafından sağlanmıştır. Geriye kalan `ph-`
+önekli dosyalar geçicidir ve yayına alınmadan önce değiştirilmelidir —
+kontrol listesi: `content/yayin-oncesi.md`.
 
-Kaynak: Unsplash. Unsplash lisansı ticari kullanıma izin verir ve atıf zorunlu
-değildir; yine de kaynak burada kayıt altına alınmıştır.
+## Müşteri tarafından sağlanan görseller
 
-## Geçici görseller
+Her hizmet kendi renginde bir kadraj kullanır; hepsi sol tarafı metin için boş
+bırakacak şekilde hazırlanmıştır. Her biri iki dosyaya çevrilir: tam kadraj
+(sayfa hero'su) ve sağdan kırpılmış kart varyantı (`-kart`).
+
+| Dosya | Renk | Kullanıldığı yer |
+|---|---|---|
+| `assets/hero-anasayfa.webp` | Adaçayı-gri | Anasayfa hero |
+| `assets/aleyna-portre.webp` | — | Hakkımda hero'su ve anasayfa tanıtımı |
+| `assets/ergoterapi.webp` + `-kart` | Şeftali | Ergoterapi sayfası ve kartları |
+| `assets/duyu-butunleme.webp` + `-kart` | Pembe | Duyu Bütünleme sayfası ve kartları |
+| `assets/oz-bakim.webp` + `-kart` | Yeşil | Öz Bakım sayfası ve kartları |
+| `assets/gunluk-yasam.webp` + `-kart` | Sarı | Günlük Yaşam sayfası ve kartları |
+| `assets/aile-danismanlik.webp` + `-kart` | Mavi | Aile Danışmanlığı sayfası ve kartları |
+| `assets/logo.png` | — | Navbar ve footer |
+
+Müşteri iki alternatif göndermişti: ergoterapi için gri yerine şeftali,
+öz bakım için mor yerine yeşil seçildi — gri palete soğuk kaçıyordu, mor ise
+markada karşılığı olmayan bir renkti.
+
+## Geçici görseller (Unsplash)
 
 | Dosya | Kaynak | İçerik | Kullanıldığı yer |
 |---|---|---|---|
-| `ph-ergoterapi.webp` | [Xz7MMD5tZwA](https://unsplash.com/photos/Xz7MMD5tZwA) | Masada küp oyunu oynayan çocuk | Ergoterapi kartı ve sayfa hero |
-| `ph-duyu.webp` | [bPY7IrvRaFc](https://unsplash.com/photos/bPY7IrvRaFc) | Elleri toz/doku içinde çocuk | Duyu Bütünleme kartı ve sayfa hero |
-| `ph-ozbakim.webp` | [5DqwT2Zw2hE](https://unsplash.com/photos/5DqwT2Zw2hE) | Çocuğun gömlek düğmesine yardım eden ebeveyn | Öz Bakım kartı ve sayfa hero |
-| `ph-gunluk.webp` | [fCdtetip6_Y](https://unsplash.com/photos/fCdtetip6_Y) | Masada çizim yapan iki çocuk | Günlük Yaşam kartı ve sayfa hero |
-| `ph-aile.webp` | [RlzKlHDoS8g](https://unsplash.com/photos/RlzKlHDoS8g) | Birlikte çizim yapan anne ve kız | Aile Danışmanlığı kartı ve sayfa hero |
 | `ph-blog-1.webp` | [8Bgxf4awpTM](https://unsplash.com/photos/8Bgxf4awpTM) | Boyaya bulanmış eller | Blog: duyu bütünleme nedir |
 | `ph-blog-2.webp` | [KuCGlBXjH_o](https://unsplash.com/photos/KuCGlBXjH_o) | Blok istifleyen eller | Blog: ince motor beceriler |
 | `ph-blog-3.webp` | [cjOXmi-AFpU](https://unsplash.com/photos/cjOXmi-AFpU) | Birlikte blok kuran baba ve oğul | Blog: ne zaman başvurulur |
-| `ph-doku.webp` | [RcxR1aLw8X0](https://unsplash.com/photos/RcxR1aLw8X0) | Ahşap bloklar, doku detayı | Bölüm arka planı / yedek |
+| `ph-doku.webp` | [RcxR1aLw8X0](https://unsplash.com/photos/RcxR1aLw8X0) | Ahşap bloklar | Anasayfa süreç bölümü |
 
-## Stok fotoğraf kullanılmayan yerler
-
-Bu iki alan gerçek bir kişiyi ve gerçek bir mekânı temsil ettiği için stok
-fotoğrafla doldurulmaz. Yerlerine `.ph-photo` CSS yer tutucusu ("Fotoğraf
-eklenecek" etiketli) konur:
-
-- Aleyna Keskin portresi — anasayfa hakkında önizlemesi, Hakkımda sayfası hero'su
-- Çalışma alanı / klinik iç mekân fotoğrafları — Hakkımda ve İletişim sayfaları
-
-## Kalıcı görseller
+## Üretilen görseller
 
 | Dosya | Durum |
 |---|---|
-| `assets/hero-anasayfa.webp` | Anasayfa hero — müşteri tarafından sağlandı |
-| `assets/logo.png` | Aleyna Keskin logosu — kalıcı |
-| `assets/favicon*.png`, `favicon.ico`, `apple-touch-icon.png` | Eski markadan kalma, logodan yeniden üretilecek (Task 12) |
+| `assets/og-image.jpg` | Paylaşım kartı — logo geldiğinde logolu sürümle değiştirilebilir |
+| `assets/favicon*.png`, `favicon.ico`, `apple-touch-icon.png` | Eski markadan kalma, logodan yeniden üretilecek |
+
+## Hâlâ eksik
+
+- Klinik / çalışma alanı fotoğrafları (İletişim sayfası için)
