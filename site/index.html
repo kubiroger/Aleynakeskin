@@ -589,8 +589,9 @@ tailwind.config = { theme: { extend: {
 
   <!-- SSS -->
   <section id="sss" class="py-20 sm:py-24 px-6 bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="font-display text-3xl sm:text-4xl fade-up">Sık sorulan sorular</h2>
+    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] gap-8 lg:gap-16">
+      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl sm:text-4xl fade-up">Sık sorulan sorular</h2>
+      <div>
 
       <div class="mt-10 fade-up">
         <details class="faq py-5">
@@ -640,6 +641,8 @@ tailwind.config = { theme: { extend: {
           </summary>
           <p class="text-ink-soft leading-relaxed mt-3 pr-8">Şişli'deki çalışma alanımda, yüz yüze yapılıyor. Adres ve ulaşım bilgileri iletişim sayfasında.</p>
         </details>
+      </div>
+    
       </div>
     </div>
   </section>

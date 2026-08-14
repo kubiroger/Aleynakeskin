@@ -330,8 +330,9 @@ tailwind.config = { theme: { extend: {
 
   <!-- YONLENDIRME -->
   <section id="yonlendirme" class="py-16 sm:py-20 px-6 bg-cream">
-    <div class="max-w-3xl mx-auto fade-up">
-      <h2 class="font-display text-3xl">Hangisi bize uygun, emin değilim</h2>
+    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] gap-8 lg:gap-16 fade-up">
+      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl">Hangisi bize uygun, emin değilim</h2>
+      <div>
       <p class="text-ink-soft leading-relaxed mt-5">
         Bu çok sık duyduğum bir cümle ve tamamen normal. Hizmet başlıkları birbirinden
         kesin çizgilerle ayrılmıyor; çoğu süreçte birkaçı birlikte ilerliyor. Doğru başlığı
@@ -339,17 +340,61 @@ tailwind.config = { theme: { extend: {
         belirliyoruz.
       </p>
       <a href="iletisim.html" class="inline-block bg-ink text-white font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition mt-8">İlk görüşme için ulaşın</a>
+    
+      </div>
     </div>
   </section>
 
   <!-- SUREC OZETI -->
   <section class="py-16 sm:py-20 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center fade-up">
-      <h2 class="font-display text-3xl">Süreç nasıl işliyor?</h2>
-      <p class="text-ink-soft leading-relaxed mt-4">
-        Hangi hizmeti seçerseniz seçin, altı adımlı aynı yapıyı izliyoruz.
-      </p>
-      <a href="index.html#surec" class="inline-block text-gold-deep font-medium mt-6 hover:underline underline-offset-4">Adımları görün &rarr;</a>
+    <div class="max-w-[1440px] mx-auto">
+      <div class="flex flex-wrap items-end justify-between gap-6 fade-up">
+        <div class="max-w-xl">
+          <p class="flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+            Ortak yol
+          </p>
+          <h2 class="font-display text-3xl lg:text-4xl mt-4">Hangi hizmeti seçerseniz seçin, süreç aynı işliyor</h2>
+          <p class="text-ink-soft leading-relaxed mt-4">
+            Altı adımın tamamı her hizmette geçerli. Hangi başlıkta çalışacağımızı
+            ikinci adımda, değerlendirmeden sonra birlikte netleştiriyoruz.
+          </p>
+        </div>
+        <a href="index.html#surec" class="text-gold-deep font-medium hover:underline underline-offset-4">Adımların ayrıntısı &rarr;</a>
+      </div>
+
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 fade-up">
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">01</span>
+          <h3 class="font-display text-xl mt-2">İlk görüşme</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Gözlemlerinizi dinliyor, sürecin size uygun olup olmadığına birlikte karar veriyoruz.</p>
+        </li>
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">02</span>
+          <h3 class="font-display text-xl mt-2">Değerlendirme</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Çocuğunuzu oyun ortamında gözlemliyor, gelişim alanlarını bütüncül ele alıyorum.</p>
+        </li>
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">03</span>
+          <h3 class="font-display text-xl mt-2">Bireysel program</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Çocuğunuza özel hedefler belirliyor, bunları sizinle paylaşıyorum.</p>
+        </li>
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">04</span>
+          <h3 class="font-display text-xl mt-2">Seanslar</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Oyunun içinden geçen, çocuğun keyif aldığı etkinliklerle çalışıyoruz.</p>
+        </li>
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">05</span>
+          <h3 class="font-display text-xl mt-2">Aile eğitimi ve ev programı</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Evde uygulayabileceğiniz etkinlikleri birlikte planlıyoruz.</p>
+        </li>
+        <li class="bg-cream rounded-4xl p-6">
+          <span class="block font-display text-2xl text-gold">06</span>
+          <h3 class="font-display text-xl mt-2">Gelişim takibi</h3>
+          <p class="text-sm text-ink-soft leading-relaxed mt-2">Belirli aralıklarla ilerlemeyi gözden geçirip hedefleri güncelliyoruz.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
