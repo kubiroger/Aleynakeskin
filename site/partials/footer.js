@@ -1,118 +1,57 @@
-// Single source of truth for the shared site footer (index.html + treatment pages).
-// Edit this file, then run `node scripts/build.js` from site/ to propagate the
-// change to every page that includes it.
-// Layout adapted from the Evermind Webflow template footer (contact-c):
-// light background, brand block left + labelled link columns right,
-// bottom bar with copyright + dot-separated legal links, disclaimer + socials.
+// Shared footer + the floating WhatsApp button. Edit here, then run `npm run build`.
+
+const { SERVICES, WHATSAPP } = require("./navbar");
+
+const serviceLinks = SERVICES.map(
+  (s) => `        <li><a href="${s.href}" class="hover:text-gold transition">${s.title}</a></li>`
+).join("\n");
 
 function renderFooter() {
-  return `<!-- TRUST STRIP: partner hospital accreditations & awards (rendered with the footer on every page) -->
-<style>
-  .trust-logo { filter: grayscale(1); opacity: .5; transition: filter .35s ease, opacity .35s ease; }
-  .trust-logo:hover { filter: grayscale(0); opacity: 1; }
-  @media (prefers-reduced-motion: reduce) { .trust-logo { transition: none; } }
-  /* Primary CTA hover feedback: navy alone is too close to ink, so add a soft lift + glow */
-  :is(a, button)[class*="hover:bg-navy"] { transition: background-color .3s ease, box-shadow .3s ease, transform .3s ease; }
-  :is(a, button)[class*="hover:bg-navy"]:hover { box-shadow: 0 6px 18px rgba(23, 37, 90, .35); transform: translateY(-1px); }
-  @media (prefers-reduced-motion: reduce) { :is(a, button)[class*="hover:bg-navy"], :is(a, button)[class*="hover:bg-navy"]:hover { transition: none; transform: none; } }
-</style>
-<section class="w-full px-6 py-14 bg-white" aria-label="Accreditations, awards and partner hospitals">
-  <div class="max-w-screen-2xl mx-auto flex flex-col items-center gap-12">
+  const year = 2026;
 
-    <!-- Group 1: accreditations & awards (badges) -->
-    <div class="flex flex-col items-center gap-8 w-full pt-10 border-t border-ink/10">
-      <div class="text-xs font-semibold tracking-[0.2em] text-ink/40 uppercase text-center">Accreditations &amp; Awards</div>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 lg:gap-x-10 xl:gap-x-14">
-        <img src="assets/trust/jci.png" alt="Joint Commission International Quality Approval" title="JCI — Joint Commission International" class="trust-logo h-16 md:h-20 w-auto" width="250" height="250" loading="lazy">
-        <img src="assets/trust/iso-27001.png" alt="ISO 27001 Information Security Management certification" title="ISO 27001 — Information Security" class="trust-logo h-10 md:h-12 w-auto" width="347" height="131" loading="lazy">
-        <img src="assets/trust/iso-ims.png" alt="ISO 9001, ISO 14001 & ISO 45001 Integrated Management System certification" title="ISO 9001 / 14001 / 45001 — Integrated Management System" class="trust-logo h-20 md:h-24 w-auto" width="143" height="291" loading="lazy">
-        <img src="assets/trust/doctify-2025.png" alt="Doctify Outstanding Patient Experience Award 2025" title="Doctify — Outstanding Patient Experience 2025" class="trust-logo h-16 md:h-20 w-auto rounded-xl" width="899" height="520" loading="lazy">
-        <img src="assets/trust/planetree.png" alt="Planetree Certified — Excellence in Person-Centered Care" title="Planetree Certified — Excellence in Person-Centered Care" class="trust-logo h-20 md:h-24 w-auto" width="396" height="687" loading="lazy">
-        <img src="assets/trust/leed.png" alt="LEED Platinum green building certification — U.S. Green Building Council" title="LEED Platinum — U.S. Green Building Council" class="trust-logo h-14 md:h-16 w-auto" width="320" height="320" loading="lazy">
-      </div>
+  return `<footer class="bg-ink text-white/80 mt-24">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
+
+    <div>
+      <img src="assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-11 w-auto brightness-0 invert opacity-95">
+      <p class="font-display text-xl text-white mt-5">Birlikte Mutlu Yarınlara</p>
+      <p class="text-sm mt-2 text-white/60">Duyu Bütünleme &bull; Gelişimsel Destek</p>
     </div>
 
-    <!-- Group 2: partner hospitals & travel (wordmarks) -->
-    <div class="flex flex-col items-center gap-8 w-full pt-10 border-t border-ink/10">
-      <div class="text-xs font-semibold tracking-[0.2em] text-ink/40 uppercase text-center">Trusted Partner Hospitals &amp; Travel</div>
-      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-7 md:gap-x-16 lg:gap-x-20">
-        <img src="assets/trust/medicana.png" alt="Medicana International partner hospital" title="Medicana International" class="trust-logo h-8 md:h-9 w-auto" width="1150" height="420" loading="lazy">
-        <img src="assets/trust/memorial.png" alt="Memorial Healthcare Group partner hospital" title="Memorial Healthcare Group" class="trust-logo h-5 md:h-6 w-auto" width="250" height="39" loading="lazy">
-        <img src="assets/trust/acibadem.png" alt="Acıbadem Healthcare Group partner hospital" title="Acıbadem Healthcare Group" class="trust-logo h-4 md:h-5 w-auto" width="295" height="42" loading="lazy">
-        <img src="assets/trust/turkish-airlines.png" alt="Turkish Airlines travel partner" title="Turkish Airlines" class="trust-logo h-8 md:h-9 w-auto" width="860" height="271" loading="lazy">
-      </div>
+    <div>
+      <h2 class="text-white font-medium text-sm tracking-wide uppercase mb-4">Hizmetler</h2>
+      <ul class="space-y-2.5 text-sm">
+${serviceLinks}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-white font-medium text-sm tracking-wide uppercase mb-4">İletişim</h2>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="tel:+905011774208" class="hover:text-gold transition">+90 501 177 42 08</a></li>
+        <li><a href="mailto:aleynaakeskin1@gmail.com" class="hover:text-gold transition">aleynaakeskin1@gmail.com</a></li>
+        <li class="text-white/60 leading-relaxed">Esentepe Mah. Kasap Sk.<br>Aslan Apt. No: 11 D: 4<br>Şişli / İstanbul</li>
+        <li><a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+          @ergoterapist.aleyna
+        </a></li>
+      </ul>
     </div>
 
   </div>
-</section>
-<footer class="bg-stone text-ink border-t border-ink/10">
-  <div class="px-6 md:px-10 pt-16 pb-10">
 
-    <!-- Top: brand left, link columns right -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
-      <div class="max-w-sm">
-        <a href="index.html" class="inline-block"><img src="assets/logo-box.webp" alt="Take Care Turkey" class="h-10 bg-white rounded-md p-1"></a>
-        <p class="mt-5 text-sm leading-relaxed text-ink/60">World-class medical care in Istanbul — surgery, travel and aftercare handled end to end by one dedicated team, at a fraction of Western prices.</p>
-      </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
-        <div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-navy/70 mb-4">Treatments</div>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="treatment-hair.html" class="text-ink/70 hover:text-ink transition">Hair Transplant</a>
-            <a href="treatment-bariatric-alt.html" class="text-ink/70 hover:text-ink transition">Bariatric Surgery</a>
-            <a href="treatment-ivf.html" class="text-ink/70 hover:text-ink transition">IVF</a>
-            <a href="treatment-dental.html" class="text-ink/70 hover:text-ink transition">Dental</a>
-            <a href="treatment-orthopedic.html" class="text-ink/70 hover:text-ink transition">Orthopedic &amp; Spine</a>
-          </div>
-        </div>
-        <div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-navy/70 mb-4">Company</div>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="index.html" class="text-ink/70 hover:text-ink transition">Home</a>
-            <a href="index.html#contact" class="text-ink/70 hover:text-ink transition">Contact</a>
-            <a href="portal-login.html" class="text-ink/70 hover:text-ink transition">Patient Portal</a>
-          </div>
-        </div>
-        <div>
-          <div class="text-xs font-semibold uppercase tracking-wider text-navy/70 mb-4">Support</div>
-          <div class="flex flex-col gap-2.5 text-sm">
-            <a href="mailto:care@takecareturkey.com" class="text-ink/70 hover:text-ink transition">care@takecareturkey.com</a>
-            <a href="index.html#contact" class="text-ink/70 hover:text-ink transition">Get a Free Consultation</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom bar: copyright + dot-separated legal links -->
-    <div class="mt-14 pt-6 border-t border-ink/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
-      <p>&copy; 2026 TakeCare Turkey. Istanbul.</p>
-      <div class="flex items-center gap-2">
-        <a href="#" class="hover:text-ink transition">Privacy Policy</a>
-        <span aria-hidden="true">&middot;</span>
-        <a href="#" class="hover:text-ink transition">Terms</a>
-        <span aria-hidden="true">&middot;</span>
-        <a href="#" class="hover:text-ink transition">KVKK / GDPR</a>
-      </div>
-    </div>
-
-    <!-- Disclaimer + socials -->
-    <div class="mt-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-      <p class="max-w-2xl text-xs leading-relaxed text-ink/40">TakeCare Turkey is a medical travel facilitator. Information on this website is provided for general guidance only and does not constitute medical advice; treatment suitability is always determined by licensed physicians after a personal medical assessment.</p>
-      <div class="flex items-center gap-3">
-        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink/60 hover:text-ink hover:border-ink/40 transition">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink/60 hover:text-ink hover:border-ink/40 transition">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.87.24-1.46 1.49-1.46h1.6V4.45c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4v2.17H7.75v3h2.6V21h3.15Z"/></svg>
-        </a>
-        <a href="#" aria-label="WhatsApp" class="w-9 h-9 rounded-full border border-ink/15 flex items-center justify-center text-ink/60 hover:text-ink hover:border-ink/40 transition">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.4-.1-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"/></svg>
-        </a>
-      </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+      <p>&copy; ${year} Ergoterapist Aleyna Keskin. Tüm hakları saklıdır.</p>
+      <a href="kvkk.html" class="hover:text-white/80 transition">KVKK ve Gizlilik</a>
     </div>
   </div>
-</footer>`;
+</footer>
+
+<a href="${WHATSAPP}" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"
+   class="fixed bottom-5 right-5 z-[45] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-ink/20 hover:scale-105 transition">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>`;
 }
 
 module.exports = { renderFooter };

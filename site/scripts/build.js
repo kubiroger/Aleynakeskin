@@ -1,55 +1,96 @@
-// Regenerates the shared navbar/mobile-menu/footer blocks in every page from
-// site/partials/*.js. Run this after editing a partial:
+// Injects the shared head, navbar, mobile drawer, and footer into every page.
+// Run after editing anything under partials/:
 //
-//   node scripts/build.js
+//   npm run build
 //
-// Safe to run any time -- it only touches the content between the
-// BUILD:*:START / BUILD:*:END marker comments in each page, and leaves a
-// file untouched (no write) if nothing changed.
+// Only the text between the BUILD:*:START / BUILD:*:END marker comments is
+// rewritten, so page-specific content is never touched. A file with no changes
+// is left alone (no write, no mtime churn).
+//
+// Each page declares its own metadata in a PAGE-META comment on line 1:
+//
+//   <!-- PAGE-META {"title":"...","description":"...","path":"index.html"} -->
 
 const fs = require("fs");
 const path = require("path");
+const { head } = require("../partials/head");
 const { renderHeader, renderMobileMenu, NAVBAR_SCRIPT } = require("../partials/navbar");
 const { renderFooter } = require("../partials/footer");
 
 const SITE_DIR = path.join(__dirname, "..");
 
-const PAGES = {
-  "index.html": "index",
-};
+const BLOCKS = [
+  { name: "HEAD", render: (page, meta) => head(meta) },
+  { name: "HEADER", render: (page) => renderHeader(page) },
+  { name: "MOBILE_MENU", render: (page) => renderMobileMenu(page) },
+  { name: "NAV_SCRIPT", render: () => NAVBAR_SCRIPT },
+  { name: "FOOTER", render: () => renderFooter() },
+];
 
-function replaceBetween(content, file, startMarker, endMarker, replacement) {
+function readPageMeta(content, file) {
+  const match = content.match(/<!--\s*PAGE-META\s*(\{[\s\S]*?\})\s*-->/);
+  if (!match) throw new Error(`${file}: PAGE-META yorumu eksik`);
+  try {
+    return JSON.parse(match[1]);
+  } catch (err) {
+    throw new Error(`${file}: PAGE-META gecerli JSON degil -- ${err.message}`);
+  }
+}
+
+function replaceBetween(content, file, name, replacement) {
+  const startMarker = `<!-- BUILD:${name}:START -->`;
+  const endMarker = `<!-- BUILD:${name}:END -->`;
   const startIdx = content.indexOf(startMarker);
   const endIdx = content.indexOf(endMarker);
-  if (startIdx === -1 || endIdx === -1) {
-    throw new Error(`${file}: markers not found: ${startMarker} / ${endMarker}`);
-  }
+  if (startIdx === -1 || endIdx === -1) return content; // block is optional
+  if (endIdx < startIdx) throw new Error(`${file}: BUILD:${name} isaretleri ters sirada`);
   const before = content.slice(0, startIdx + startMarker.length);
   const after = content.slice(endIdx);
   return `${before}\n${replacement}\n${after}`;
 }
 
-let changedCount = 0;
-
-for (const [file, page] of Object.entries(PAGES)) {
-  const filePath = path.join(SITE_DIR, file);
+function buildPage(filePath, file) {
   const raw = fs.readFileSync(filePath, "utf8");
   let content = raw.replace(/\r\n/g, "\n");
+  const meta = readPageMeta(content, file);
 
-  content = replaceBetween(content, file, "<!-- BUILD:HEADER:START -->", "<!-- BUILD:HEADER:END -->", renderHeader(page));
-  content = replaceBetween(content, file, "<!-- BUILD:MOBILE_MENU:START -->", "<!-- BUILD:MOBILE_MENU:END -->", renderMobileMenu(page));
-  content = replaceBetween(content, file, "<!-- BUILD:NAV_SCRIPT:START -->", "<!-- BUILD:NAV_SCRIPT:END -->", NAVBAR_SCRIPT);
-  content = replaceBetween(content, file, "<!-- BUILD:FOOTER:START -->", "<!-- BUILD:FOOTER:END -->", renderFooter());
+  for (const block of BLOCKS) {
+    content = replaceBetween(content, file, block.name, block.render(file, meta));
+  }
 
   content = content.replace(/\n/g, "\r\n");
-
-  if (content !== raw) {
-    fs.writeFileSync(filePath, content, "utf8");
-    console.log(file, "updated");
-    changedCount++;
-  } else {
-    console.log(file, "unchanged");
-  }
+  if (content === raw) return false;
+  fs.writeFileSync(filePath, content, "utf8");
+  return true;
 }
 
-console.log(`Build complete. ${changedCount} file(s) updated.`);
+function listPages(dir, prefix = "") {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .flatMap((entry) => {
+      if (entry.isDirectory() && entry.name === "blog") {
+        return listPages(path.join(dir, entry.name), "blog/");
+      }
+      return entry.isFile() && entry.name.endsWith(".html") ? [prefix + entry.name] : [];
+    });
+}
+
+function build() {
+  const pages = listPages(SITE_DIR);
+  let changed = 0;
+
+  for (const file of pages) {
+    if (buildPage(path.join(SITE_DIR, file), file)) {
+      console.log(file, "guncellendi");
+      changed++;
+    } else {
+      console.log(file, "degismedi");
+    }
+  }
+
+  console.log(`Build tamam. ${changed}/${pages.length} dosya guncellendi.`);
+}
+
+if (require.main === module) build();
+
+module.exports = { build, readPageMeta, replaceBetween, listPages };
