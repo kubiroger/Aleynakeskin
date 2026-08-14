@@ -10,7 +10,6 @@ değildir; yine de kaynak burada kayıt altına alınmıştır.
 
 | Dosya | Kaynak | İçerik | Kullanıldığı yer |
 |---|---|---|---|
-| `ph-hero.webp` | [nzDQbidiUrU](https://unsplash.com/photos/nzDQbidiUrU) | Ahşap bloklarla oynayan çocuğa eşlik eden anne ve baba | Anasayfa hero (tam ekran) |
 | `ph-ergoterapi.webp` | [Xz7MMD5tZwA](https://unsplash.com/photos/Xz7MMD5tZwA) | Masada küp oyunu oynayan çocuk | Ergoterapi kartı ve sayfa hero |
 | `ph-duyu.webp` | [bPY7IrvRaFc](https://unsplash.com/photos/bPY7IrvRaFc) | Elleri toz/doku içinde çocuk | Duyu Bütünleme kartı ve sayfa hero |
 | `ph-ozbakim.webp` | [5DqwT2Zw2hE](https://unsplash.com/photos/5DqwT2Zw2hE) | Çocuğun gömlek düğmesine yardım eden ebeveyn | Öz Bakım kartı ve sayfa hero |
@@ -34,5 +33,6 @@ eklenecek" etiketli) konur:
 
 | Dosya | Durum |
 |---|---|
+| `assets/hero-anasayfa.webp` | Anasayfa hero — müşteri tarafından sağlandı |
 | `assets/logo.png` | Aleyna Keskin logosu — kalıcı |
 | `assets/favicon*.png`, `favicon.ico`, `apple-touch-icon.png` | Eski markadan kalma, logodan yeniden üretilecek (Task 12) |

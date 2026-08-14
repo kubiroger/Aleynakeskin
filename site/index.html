@@ -237,18 +237,19 @@ tailwind.config = { theme: { extend: {
 
   <!-- HERO -->
   <!--
-    Hero gorseli tam ekrani kaplar. Degistirmek icin asagidaki tek <img> yeterli;
-    okunabilirlik katmani gorselden bagimsiz calisir.
+    Hero gorseli tam ekrani kaplar. Degistirmek icin asagidaki tek <img> yeterli.
+    Bu gorselin sol tarafi metin icin bos birakilmis, bu yuzden masaustunde
+    okunabilirlik katmani cok hafif; mobilde gorsel kirpildigi icin guclenir.
   -->
-  <section class="relative min-h-[88vh] flex items-center overflow-hidden">
-    <img src="assets/placeholder/ph-hero.webp"
-         alt="Ahşap bloklarla oynayan çocuğuna eşlik eden anne ve baba"
-         width="1500" height="2250"
-         class="absolute inset-0 w-full h-full object-cover [object-position:60%_38%] lg:[object-position:70%_36%]">
+  <section class="relative min-h-[88vh] flex items-center overflow-hidden bg-cream">
+    <img src="assets/hero-anasayfa.webp"
+         alt="Ahşap ve renkli oyuncaklarla çalışan ergoterapist ve çocuk, arkada izleyen anne"
+         width="1448" height="1086"
+         class="absolute inset-0 w-full h-full object-cover [object-position:72%_50%] lg:object-center">
     <!-- Metnin okunmasi icin sicak katman: mobilde dikey, masaustunde yatay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/80 to-cream/40 lg:bg-gradient-to-r lg:from-cream lg:via-cream/75 lg:to-transparent" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/80 to-cream/40 lg:bg-gradient-to-r lg:from-cream/70 lg:via-cream/25 lg:to-transparent" aria-hidden="true"></div>
 
-    <div class="relative w-full max-w-[1440px] mx-auto px-6 pt-32 pb-16 sm:pt-40 sm:pb-20">
+    <div class="relative w-full max-w-[1440px] mx-auto px-6 pt-28 pb-12 sm:pt-32 sm:pb-16">
       <div class="max-w-2xl">
         <p class="text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">Ergoterapist &bull; Şişli / İstanbul</p>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mt-4">Birlikte<br>Mutlu Yarınlara</h1>
@@ -257,14 +258,14 @@ tailwind.config = { theme: { extend: {
           Çocuğunuzun kendi gücünü keşfetmesine eşlik ediyorum. Oyunun içinden geçen,
           çocuğa ve aileye birlikte alan açan bir destek süreci.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3 mt-9">
+        <div class="flex flex-col sm:flex-row gap-3 mt-8">
           <a href="iletisim.html" class="bg-ink text-white text-center font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition">Randevu Talep Edin</a>
           <a href="hizmetler.html" class="bg-white/80 backdrop-blur border border-ink/10 text-center px-8 py-4 rounded-full hover:bg-white transition">Hizmetleri İnceleyin</a>
         </div>
       </div>
 
       <!-- Guven serisi -->
-      <ul class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 mt-14 max-w-3xl">
+      <ul class="grid grid-cols-2 gap-x-8 gap-y-5 mt-10 max-w-lg">
         <li class="flex flex-col gap-2.5">
           <svg class="text-gold-deep" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
           <span class="text-sm font-medium leading-snug">Çocuğa özel<br>bireysel program</span>
