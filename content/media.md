@@ -10,7 +10,7 @@ değildir; yine de kaynak burada kayıt altına alınmıştır.
 
 | Dosya | Kaynak | İçerik | Kullanıldığı yer |
 |---|---|---|---|
-| `ph-hero.webp` | [T6pS-Dr8ams](https://unsplash.com/photos/T6pS-Dr8ams) | Yetişkin ve çocuk yerde birlikte blok oyunu | Anasayfa hero |
+| `ph-hero.webp` | [nzDQbidiUrU](https://unsplash.com/photos/nzDQbidiUrU) | Ahşap bloklarla oynayan çocuğa eşlik eden anne ve baba | Anasayfa hero (tam ekran) |
 | `ph-ergoterapi.webp` | [Xz7MMD5tZwA](https://unsplash.com/photos/Xz7MMD5tZwA) | Masada küp oyunu oynayan çocuk | Ergoterapi kartı ve sayfa hero |
 | `ph-duyu.webp` | [bPY7IrvRaFc](https://unsplash.com/photos/bPY7IrvRaFc) | Elleri toz/doku içinde çocuk | Duyu Bütünleme kartı ve sayfa hero |
 | `ph-ozbakim.webp` | [5DqwT2Zw2hE](https://unsplash.com/photos/5DqwT2Zw2hE) | Çocuğun gömlek düğmesine yardım eden ebeveyn | Öz Bakım kartı ve sayfa hero |

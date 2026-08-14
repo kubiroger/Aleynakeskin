@@ -236,24 +236,52 @@ tailwind.config = { theme: { extend: {
 <main id="main">
 
   <!-- HERO -->
-  <section class="bg-cream pt-32 pb-20 sm:pt-40 sm:pb-28 px-6">
-    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div>
+  <!--
+    Hero gorseli tam ekrani kaplar. Degistirmek icin asagidaki tek <img> yeterli;
+    okunabilirlik katmani gorselden bagimsiz calisir.
+  -->
+  <section class="relative min-h-[88vh] flex items-center overflow-hidden">
+    <img src="assets/placeholder/ph-hero.webp"
+         alt="Ahşap bloklarla oynayan çocuğuna eşlik eden anne ve baba"
+         width="1500" height="2250"
+         class="absolute inset-0 w-full h-full object-cover [object-position:60%_38%] lg:[object-position:70%_36%]">
+    <!-- Metnin okunmasi icin sicak katman: mobilde dikey, masaustunde yatay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-cream via-cream/80 to-cream/40 lg:bg-gradient-to-r lg:from-cream lg:via-cream/75 lg:to-transparent" aria-hidden="true"></div>
+
+    <div class="relative w-full max-w-[1440px] mx-auto px-6 pt-32 pb-16 sm:pt-40 sm:pb-20">
+      <div class="max-w-2xl">
         <p class="text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">Ergoterapist &bull; Şişli / İstanbul</p>
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mt-4">Birlikte Mutlu Yarınlara</h1>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mt-4">Birlikte<br>Mutlu Yarınlara</h1>
         <div class="rule-gold mt-6" aria-hidden="true"></div>
-        <p class="text-lg text-ink-soft leading-relaxed mt-6 max-w-lg">
+        <p class="text-lg sm:text-xl text-ink-soft leading-relaxed mt-6 max-w-xl">
           Çocuğunuzun kendi gücünü keşfetmesine eşlik ediyorum. Oyunun içinden geçen,
           çocuğa ve aileye birlikte alan açan bir destek süreci.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 mt-9">
           <a href="iletisim.html" class="bg-ink text-white text-center font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition">Randevu Talep Edin</a>
-          <a href="hizmetler.html" class="border border-ink/15 text-center px-8 py-4 rounded-full hover:bg-white transition">Hizmetleri İnceleyin</a>
+          <a href="hizmetler.html" class="bg-white/80 backdrop-blur border border-ink/10 text-center px-8 py-4 rounded-full hover:bg-white transition">Hizmetleri İnceleyin</a>
         </div>
       </div>
-      <div class="relative">
-        <img src="assets/placeholder/ph-hero.webp" alt="Yerde birlikte blok oyunu oynayan yetişkin ve çocuk" width="1600" height="1067" class="w-full h-[380px] sm:h-[480px] object-cover rounded-4xl">
-      </div>
+
+      <!-- Guven serisi -->
+      <ul class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 mt-14 max-w-3xl">
+        <li class="flex flex-col gap-2.5">
+          <svg class="text-gold-deep" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+          <span class="text-sm font-medium leading-snug">Çocuğa özel<br>bireysel program</span>
+        </li>
+        <li class="flex flex-col gap-2.5">
+          <svg class="text-gold-deep" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h4v4a2 2 0 0 0 4 0V3h4a2 2 0 0 1 2 2v4h-1.5a2.5 2.5 0 0 0 0 5H20v4a2 2 0 0 1-2 2h-4v-1.5a2.5 2.5 0 0 0-5 0V20H6a2 2 0 0 1-2-2V5z"/></svg>
+          <span class="text-sm font-medium leading-snug">Oyunun içinden<br>geçen çalışma</span>
+        </li>
+        <li class="flex flex-col gap-2.5">
+          <svg class="text-gold-deep" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9z"/><path d="M9 21v-7h6v7"/></svg>
+          <span class="text-sm font-medium leading-snug">Aile eğitimi ve<br>ev programı</span>
+        </li>
+        <li class="flex flex-col gap-2.5">
+          <svg class="text-gold-deep" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="text-sm font-medium leading-snug">Şişli'de<br>yüz yüze seanslar</span>
+        </li>
+      </ul>
     </div>
   </section>
 
