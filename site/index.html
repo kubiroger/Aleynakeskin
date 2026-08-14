@@ -553,17 +553,31 @@ tailwind.config = { theme: { extend: {
         <h2 class="font-display text-3xl sm:text-4xl">Ailelerden</h2>
         <p class="text-ink-soft leading-relaxed mt-4">Birlikte çalıştığımız ailelerin süreç hakkındaki görüşleri.</p>
       </div>
-      <!-- MÜŞTERİDEN: gercek aile yorumlari. Gelene kadar bos kart iskeleti durur; uydurma yorum yazilmaz. -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 fade-up">
-        <div class="border border-dashed border-gold/50 rounded-4xl bg-cream min-h-[200px] flex items-center justify-center">
-          <span class="text-xs tracking-[0.08em] uppercase text-gold-deep">Yorum eklenecek</span>
-        </div>
-        <div class="border border-dashed border-gold/50 rounded-4xl bg-cream min-h-[200px] flex items-center justify-center">
-          <span class="text-xs tracking-[0.08em] uppercase text-gold-deep">Yorum eklenecek</span>
-        </div>
-        <div class="border border-dashed border-gold/50 rounded-4xl bg-cream min-h-[200px] flex items-center justify-center">
-          <span class="text-xs tracking-[0.08em] uppercase text-gold-deep">Yorum eklenecek</span>
-        </div>
+      <!--
+        MÜŞTERİDEN: gercek aile yorumlari. Asagidakiler yalnizca tasarimi
+        gormek icin yazilmis ORNEK metinlerdir ve "Örnek metin" rozetiyle
+        isaretlidir. Gercek yorumlar gelince metinleri degistirip rozet
+        <span>'lerini silin. Uydurma yorum yayina alinmaz.
+      -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12 fade-up">
+        <figure class="relative bg-cream rounded-4xl p-7 border border-gold/25">
+          <span class="absolute -top-3 left-6 bg-gold-soft text-gold-deep text-[11px] tracking-[0.1em] uppercase px-3 py-1 rounded-full">Örnek metin</span>
+          <svg class="text-gold" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.4 2.4-4.3L9.5 6zm9 0c-3 1.5-4.5 4-4.5 7v5h6v-6h-3c0-2 .8-3.4 2.4-4.3L18.5 6z"/></svg>
+          <blockquote class="text-ink-soft leading-relaxed mt-4">İlk görüşmede en çok şaşırtan şey, benim gözlemlerimin de dinlenmesi oldu. Kızımın sabahları neden zorlandığını birlikte konuştuk, evde deneyebileceğim iki üç şey belirledik.</blockquote>
+          <figcaption class="text-sm text-ink font-medium mt-5">&mdash; 5 yaşında bir kızın annesi</figcaption>
+        </figure>
+        <figure class="relative bg-cream rounded-4xl p-7 border border-gold/25">
+          <span class="absolute -top-3 left-6 bg-gold-soft text-gold-deep text-[11px] tracking-[0.1em] uppercase px-3 py-1 rounded-full">Örnek metin</span>
+          <svg class="text-gold" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.4 2.4-4.3L9.5 6zm9 0c-3 1.5-4.5 4-4.5 7v5h6v-6h-3c0-2 .8-3.4 2.4-4.3L18.5 6z"/></svg>
+          <blockquote class="text-ink-soft leading-relaxed mt-4">Oğlum seanslara oyun oynamaya gittiğini sanıyor. Ben de arada ne çalışıldığını soruyorum, hep açıkça anlatılıyor. Bu şeffaflık bizi rahatlattı.</blockquote>
+          <figcaption class="text-sm text-ink font-medium mt-5">&mdash; 6 yaşında bir oğlun babası</figcaption>
+        </figure>
+        <figure class="relative bg-cream rounded-4xl p-7 border border-gold/25">
+          <span class="absolute -top-3 left-6 bg-gold-soft text-gold-deep text-[11px] tracking-[0.1em] uppercase px-3 py-1 rounded-full">Örnek metin</span>
+          <svg class="text-gold" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.4 2.4-4.3L9.5 6zm9 0c-3 1.5-4.5 4-4.5 7v5h6v-6h-3c0-2 .8-3.4 2.4-4.3L18.5 6z"/></svg>
+          <blockquote class="text-ink-soft leading-relaxed mt-4">Kalabalık yerlerde yaşadığımız zorlanmayı anlatabilmek bile iyi geldi. Önerilen şeyler bizim düzenimize uyuyordu, o yüzden sürdürebildik.</blockquote>
+          <figcaption class="text-sm text-ink font-medium mt-5">&mdash; 4 yaşında bir kızın annesi</figcaption>
+        </figure>
       </div>
     </div>
   </section>
