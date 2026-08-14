@@ -1,0 +1,557 @@
+<!-- PAGE-META {"title":"İletişim | Ergoterapist Aleyna Keskin — Şişli, İstanbul","description":"Randevu ve bilgi için ulaşın. Esentepe Mah. Şişli / İstanbul. Telefon, WhatsApp ve iletişim formu.","path":"iletisim.html"} -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- BUILD:HEAD:START -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim | Ergoterapist Aleyna Keskin — Şişli, İstanbul</title>
+<meta name="description" content="Randevu ve bilgi için ulaşın. Esentepe Mah. Şişli / İstanbul. Telefon, WhatsApp ve iletişim formu.">
+<link rel="canonical" href="https://aleynakeskin.com/iletisim.html">
+<meta name="theme-color" content="#2B2724">
+
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Ergoterapist Aleyna Keskin">
+<meta property="og:title" content="İletişim | Ergoterapist Aleyna Keskin — Şişli, İstanbul">
+<meta property="og:description" content="Randevu ve bilgi için ulaşın. Esentepe Mah. Şişli / İstanbul. Telefon, WhatsApp ve iletişim formu.">
+<meta property="og:url" content="https://aleynakeskin.com/iletisim.html">
+<meta property="og:image" content="https://aleynakeskin.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: {"ink":{"DEFAULT":"#2B2724","soft":"#6B635C","mid":"#453E37"},"gold":{"DEFAULT":"#C89B6B","deep":"#A97C4F","soft":"#EFE4D5"},"cream":{"DEFAULT":"#FBF8F3","deep":"#F4EDE3"},"terracotta":"#D98E6A","sage":"#8FA98B"},
+  fontFamily: {
+    sans: ["Figtree", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+    display: ["Playfair Display", "Georgia", "serif"]
+  },
+  borderRadius: { "4xl": "2rem" }
+} } }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; color-scheme: light; }
+  html, body { overflow-x: clip; }
+  body { font-family: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  h1, h2, h3, .font-display { font-family: "Playfair Display", Georgia, serif; letter-spacing: -0.01em; text-wrap: balance; }
+  section[id] { scroll-margin-top: 6.5rem; }
+  a, button, input, select, textarea { touch-action: manipulation; }
+  :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid #C89B6B; outline-offset: 2px; border-radius: 4px; }
+  .bg-ink :is(a, button, input, select):focus-visible { outline-color: #EFE4D5; }
+
+  /* Gold rule with a dot -- the divider motif from the business card */
+  .rule-gold { display: flex; align-items: center; gap: .5rem; }
+  .rule-gold::before { content: ""; height: 1px; width: 100%; max-width: 8rem; background: linear-gradient(to right, #C89B6B, rgba(200,155,107,.25)); }
+  .rule-gold::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #C89B6B; flex-shrink: 0; }
+
+  /* Photo placeholder -- stands in where a real photo of Aleyna or her room goes */
+  .ph-photo { background: #FBF8F3; border: 1px solid #C89B6B; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 320px; }
+  .ph-photo span { font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: #A97C4F; }
+
+  /* Header: floating pill that expands to a full-width bar on scroll */
+  #site-header { transition: top .4s cubic-bezier(.4,0,.2,1), padding .4s cubic-bezier(.4,0,.2,1); }
+  #site-header > div { transition: max-width .4s cubic-bezier(.4,0,.2,1), border-radius .4s cubic-bezier(.4,0,.2,1), box-shadow .4s ease; }
+  #site-header.scrolled { top: 0; padding: 0; }
+  #site-header.scrolled > div { max-width: 100%; border-radius: 0; }
+
+  /* Services dropdown */
+  .nav-item .dropdown-panel { opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s ease, visibility .2s, transform .2s ease; }
+  .nav-item:hover .dropdown-panel, .nav-item:focus-within .dropdown-panel { opacity: 1; visibility: visible; transform: none; }
+
+  /* Mobile drawer */
+  #menu-btn .menu-line { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background: #2B2724; border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, width .35s cubic-bezier(.4,0,.2,1); }
+  #menu-btn .menu-line-1 { transform: translate(-50%, -7px); }
+  #menu-btn .menu-line-2 { width: 14px; transform: translate(calc(-50% + 3px), 0); }
+  #menu-btn .menu-line-3 { transform: translate(-50%, 7px); }
+  #menu-btn.menu-open .menu-line-1 { transform: translate(-50%, -50%) rotate(45deg); }
+  #menu-btn.menu-open .menu-line-2 { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+  #menu-btn.menu-open .menu-line-3 { transform: translate(-50%, -50%) rotate(-45deg); }
+  .menu-panel { grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .menu-panel.open { grid-template-rows: 1fr; }
+  .menu-toggle[aria-expanded="true"] .chevron { transform: rotate(90deg); }
+
+  /* Scroll-in reveal */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  /* Cards */
+  .card-img { transition: transform .7s ease; }
+  .card:hover .card-img { transform: scale(1.04); }
+  .expand-row { display: flex; gap: 1.25rem; }
+  .expand-row .card { flex: 1 1 0%; transition: flex-grow .6s cubic-bezier(.4,0,.2,1); min-width: 0; }
+  .expand-row .card:hover { flex-grow: 1.5; }
+  @media (max-width: 767px) { .expand-row { flex-direction: column; } .expand-row .card:hover { flex-grow: 1; } }
+
+  /* Process timeline with a scroll-driven fill */
+  .tl-line, #tl-fill { position: absolute; left: 11px; top: 0; width: 3px; border-radius: 2px; }
+  .tl-line { bottom: 0; background: rgba(43,39,36,.10); }
+  #tl-fill { height: 0; background: #8FA98B; transition: height .15s linear; }
+  .tl-marker { position: absolute; left: 0; top: 2px; width: 25px; height: 25px; border-radius: 8px; background: #fff; border: 1px solid rgba(43,39,36,.14); display: flex; align-items: center; justify-content: center; transition: background .3s ease, border-color .3s ease; }
+  .tl-marker::after { content: ""; width: 9px; height: 9px; border-radius: 3px; background: rgba(43,39,36,.18); transition: background .3s ease; }
+  .tl-step.is-passed .tl-marker { background: #8FA98B; border-color: #8FA98B; }
+  .tl-step.is-passed .tl-marker::after { background: #fff; }
+
+  /* FAQ */
+  details.faq { border-bottom: 1px solid rgba(43,39,36,.10); }
+  details.faq summary { list-style: none; cursor: pointer; }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq[open] summary .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform .25s ease; }
+
+  /* Long-form text (blog posts, legal pages) */
+  .prose p { margin-bottom: 1.15rem; line-height: 1.8; }
+  .prose h2 { font-size: 1.5rem; margin: 2.25rem 0 .85rem; }
+  .prose h3 { font-size: 1.2rem; margin: 1.85rem 0 .7rem; }
+  .prose ul, .prose ol { margin: 0 0 1.15rem 1.25rem; line-height: 1.8; }
+  .prose ul { list-style: disc; }
+  .prose ol { list-style: decimal; }
+  .prose li { margin-bottom: .4rem; }
+  .prose a { color: #A97C4F; text-decoration: underline; text-underline-offset: 3px; }
+  .prose strong { font-weight: 600; }
+  .prose blockquote { border-left: 3px solid #C89B6B; padding-left: 1.15rem; margin: 1.5rem 0; color: #6B635C; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    #site-header, #site-header > div, .dropdown-panel, .menu-panel, .chevron,
+    #menu-btn .menu-line, #tl-fill, .tl-marker, .tl-marker::after, .faq-icon { transition: none !important; }
+    .fade-up { opacity: 1; transform: none; transition: none; }
+    .card-img, .expand-row .card { transition: none !important; }
+    .expand-row .card:hover { flex-grow: 1; }
+    .card:hover .card-img { transform: none; }
+  }
+</style>
+
+<!-- BUILD:HEAD:END -->
+</head>
+<body class="bg-white text-ink antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[70] focus:top-2 focus:left-2 focus:bg-white focus:px-4 focus:py-2 focus:rounded-full focus:shadow">İçeriğe geç</a>
+
+<!-- BUILD:HEADER:START -->
+<header id="site-header" class="fixed top-4 inset-x-0 z-50 px-4">
+  <div class="relative max-w-6xl mx-auto bg-white/95 backdrop-blur rounded-2xl shadow-lg shadow-ink/5">
+    <div class="flex items-center justify-between pl-4 pr-2 py-2.5">
+      <a href="index.html" class="shrink-0" aria-label="Anasayfa"><img src="assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-10 w-auto"></a>
+
+      <nav class="hidden lg:flex items-center gap-0.5 text-sm" aria-label="Ana menü">
+        <a href="index.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">Anasayfa</a>
+        <a href="hakkimda.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">Hakkımda</a>
+        <div class="nav-item relative">
+          <a href="hizmetler.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink inline-flex items-center gap-1">
+            Hizmetler
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[22rem]">
+            <div class="bg-white rounded-2xl shadow-xl shadow-ink/10 border border-ink/5 p-2">
+            <a href="hizmet-ergoterapi.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+              <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Ergoterapi</span>
+              <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Günlük hayata katılımı anlamlı etkinliklerle desteklemek</span>
+            </a>
+            <a href="hizmet-duyu-butunleme.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+              <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Duyu Bütünleme</span>
+              <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Duyusal bilgiyi işleme biçimini anlamak ve uyumu kolaylaştırmak</span>
+            </a>
+            <a href="hizmet-oz-bakim-becerileri.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+              <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Öz Bakım Becerileri</span>
+              <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Giyinme, beslenme ve bakımda yaşına uygun bağımsızlık</span>
+            </a>
+            <a href="hizmet-gunluk-yasam.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+              <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Günlük Yaşam Aktiviteleri</span>
+              <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Ev, okul ve sosyal ortamdaki rutinlerde katılım</span>
+            </a>
+            <a href="hizmet-aile-danismanligi.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+              <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Çocuk ve Aile Danışmanlığı</span>
+              <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Ebeveynin evde uygulayabileceği somut yaklaşımlar</span>
+            </a>
+            </div>
+          </div>
+        </div>
+        <a href="blog.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">Blog</a>
+        <a href="iletisim.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink font-medium">İletişim</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-ink text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ink-mid transition">
+          Randevu Talep Edin
+        </a>
+        <button id="menu-btn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative w-10 h-10 rounded-full hover:bg-cream transition">
+          <span class="menu-line menu-line-1"></span>
+          <span class="menu-line menu-line-2"></span>
+          <span class="menu-line menu-line-3"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- BUILD:HEADER:END -->
+
+<!-- BUILD:MOBILE_MENU:START -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-ink/40 backdrop-blur-md z-[55] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+
+<aside id="mobile-menu" class="fixed top-0 right-0 z-[60] h-full w-[86%] max-w-sm bg-white translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl" aria-hidden="true" aria-label="Mobil menü">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-ink/10 shrink-0">
+    <img src="assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-9 w-auto">
+    <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream transition">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <nav class="flex-1 overflow-y-auto overscroll-contain px-3 py-2" aria-label="Mobil ana menü">
+    <a href="index.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">Anasayfa</a>
+    <a href="hakkimda.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">Hakkımda</a>
+    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream transition text-left" aria-expanded="false">
+      <span class="text-ink">Hizmetler</span>
+      <svg class="chevron transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <div class="menu-panel grid overflow-hidden">
+      <div class="min-h-0 pl-3 pb-1">
+        <a href="hizmetler.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream transition">Tüm hizmetler</a>
+        <a href="hizmet-ergoterapi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Ergoterapi</a>
+        <a href="hizmet-duyu-butunleme.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Duyu Bütünleme</a>
+        <a href="hizmet-oz-bakim-becerileri.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Öz Bakım Becerileri</a>
+        <a href="hizmet-gunluk-yasam.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Günlük Yaşam Aktiviteleri</a>
+        <a href="hizmet-aile-danismanligi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Çocuk ve Aile Danışmanlığı</a>
+      </div>
+    </div>
+    <a href="blog.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">Blog</a>
+    <a href="iletisim.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink font-medium">İletişim</a>
+  </nav>
+
+  <div class="border-t border-ink/10 p-4 space-y-2.5 shrink-0">
+    <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="block bg-ink text-white text-center font-medium py-3.5 rounded-full hover:bg-ink-mid transition">Randevu Talep Edin</a>
+    <a href="tel:+905011774208" class="block text-center text-sm text-ink-soft py-2">+90 501 177 42 08</a>
+  </div>
+</aside>
+<!-- BUILD:MOBILE_MENU:END -->
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="bg-cream pt-32 pb-14 sm:pt-40 sm:pb-16 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="font-display text-4xl sm:text-5xl leading-tight">İletişim</h1>
+      <div class="rule-gold mt-6 justify-center" aria-hidden="true"></div>
+      <p class="text-lg text-ink-soft leading-relaxed mt-6">
+        Aklınızdaki soruları konuşmak için kısa bir görüşme yeterli.
+        Size en kısa sürede dönüş yapıyorum.
+      </p>
+    </div>
+  </section>
+
+  <!-- BILGILER + FORM -->
+  <section class="py-16 sm:py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
+
+      <!-- BILGILER -->
+      <div class="fade-up">
+        <h2 class="font-display text-3xl">Doğrudan ulaşın</h2>
+        <ul class="mt-8 space-y-6">
+          <li class="flex gap-4">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <p class="text-sm text-ink-soft">Telefon</p>
+              <a href="tel:+905011774208" class="text-lg font-medium hover:text-gold-deep transition">+90 501 177 42 08</a>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
+            </span>
+            <div>
+              <p class="text-sm text-ink-soft">WhatsApp</p>
+              <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="text-lg font-medium hover:text-gold-deep transition">Mesaj gönderin</a>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </span>
+            <div>
+              <p class="text-sm text-ink-soft">E-posta</p>
+              <a href="mailto:aleynaakeskin1@gmail.com" class="text-lg font-medium hover:text-gold-deep transition break-all">aleynaakeskin1@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <p class="text-sm text-ink-soft">Adres</p>
+              <p class="text-lg font-medium leading-snug">Esentepe Mah. Kasap Sk.<br>Aslan Apt. No: 11 D: 4<br>Şişli / İstanbul</p>
+            </div>
+          </li>
+
+          <li class="flex gap-4">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <div>
+              <p class="text-sm text-ink-soft">Instagram</p>
+              <a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="text-lg font-medium hover:text-gold-deep transition">@ergoterapist.aleyna</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- MÜŞTERİDEN: calisma saatleri. Geldiginde bu blogu doldurun. -->
+      </div>
+
+      <!-- FORM -->
+      <div class="fade-up">
+        <div class="bg-cream rounded-4xl p-7 sm:p-9">
+          <h2 class="font-display text-3xl">Mesaj bırakın</h2>
+          <p class="text-ink-soft leading-relaxed mt-3">
+            Formu doldurun, size döneyim. Acele bir durumsa WhatsApp'tan yazmanız daha hızlı olur.
+          </p>
+
+          <form id="iletisim-form" data-endpoint="" class="mt-7 space-y-5" novalidate>
+            <div>
+              <label for="ad" class="block text-sm font-medium mb-2">Adınız ve soyadınız <span class="text-gold-deep">*</span></label>
+              <input id="ad" name="ad" type="text" required minlength="2" maxlength="60" autocomplete="name"
+                     class="w-full bg-white border border-ink/10 rounded-xl px-4 py-3.5 placeholder:text-ink-soft/50"
+                     placeholder="Adınızı yazın">
+            </div>
+
+            <div>
+              <label for="telefon" class="block text-sm font-medium mb-2">Telefon numaranız <span class="text-gold-deep">*</span></label>
+              <input id="telefon" name="telefon" type="tel" required minlength="7" maxlength="20" inputmode="tel" autocomplete="tel"
+                     class="w-full bg-white border border-ink/10 rounded-xl px-4 py-3.5 placeholder:text-ink-soft/50"
+                     placeholder="5xx xxx xx xx">
+            </div>
+
+            <div>
+              <label for="eposta" class="block text-sm font-medium mb-2">E-posta adresiniz <span class="text-ink-soft font-normal">(isteğe bağlı)</span></label>
+              <input id="eposta" name="eposta" type="email" maxlength="254" autocomplete="email" spellcheck="false"
+                     class="w-full bg-white border border-ink/10 rounded-xl px-4 py-3.5 placeholder:text-ink-soft/50"
+                     placeholder="ornek@eposta.com">
+            </div>
+
+            <div>
+              <label for="mesaj" class="block text-sm font-medium mb-2">Mesajınız <span class="text-gold-deep">*</span></label>
+              <textarea id="mesaj" name="mesaj" required minlength="10" maxlength="1000" rows="4"
+                        class="w-full bg-white border border-ink/10 rounded-xl px-4 py-3.5 placeholder:text-ink-soft/50 resize-y"
+                        placeholder="Nasıl yardımcı olabilirim?"></textarea>
+            </div>
+
+            <p class="text-sm text-ink-soft leading-relaxed border-l-2 border-gold pl-4">
+              Çocuğunuza dair detayları görüşmemizde konuşalım; lütfen bu formda sağlık
+              bilgisi paylaşmayın.
+            </p>
+
+            <label class="flex gap-3 items-start text-sm text-ink-soft leading-relaxed">
+              <input id="kvkk" name="kvkk" type="checkbox" required class="mt-1 shrink-0 w-4 h-4 accent-[#C89B6B]">
+              <span>
+                İletişim formunu göndererek, size dönüş yapılabilmesi için paylaştığınız
+                iletişim bilgilerinin işlenmesine izin vermiş olursunuz.
+                <a href="kvkk.html" class="text-gold-deep underline underline-offset-2">KVKK ve Gizlilik</a>
+                metnini okuyabilirsiniz.
+              </span>
+            </label>
+
+            <button type="submit" class="w-full bg-ink text-white font-medium py-4 rounded-full hover:bg-ink-mid transition">
+              Mesajı gönder
+            </button>
+
+            <p id="form-durum" role="status" aria-live="polite" class="text-sm text-center"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HARITA -->
+  <section id="harita" class="py-16 sm:py-20 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl fade-up">
+        <h2 class="font-display text-3xl">Konum</h2>
+        <p class="text-ink-soft leading-relaxed mt-4">
+          Şişli, Esentepe'deki çalışma alanımda yüz yüze görüşüyoruz.
+        </p>
+      </div>
+      <div class="rounded-4xl overflow-hidden mt-8 fade-up">
+        <iframe
+          title="Konum haritası"
+          src="https://www.google.com/maps?q=Esentepe%20Mahallesi%20Kasap%20Sokak%20%C5%9Ei%C5%9Fli%20%C4%B0stanbul&output=embed"
+          width="100%" height="420" style="border:0" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- BUILD:FOOTER:START -->
+<footer class="bg-ink text-white/80 mt-24">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
+
+    <div>
+      <img src="assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-11 w-auto brightness-0 invert opacity-95">
+      <p class="font-display text-xl text-white mt-5">Birlikte Mutlu Yarınlara</p>
+      <p class="text-sm mt-2 text-white/60">Duyu Bütünleme &bull; Gelişimsel Destek</p>
+    </div>
+
+    <div>
+      <h2 class="text-white font-medium text-sm tracking-wide uppercase mb-4">Hizmetler</h2>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="hizmet-ergoterapi.html" class="hover:text-gold transition">Ergoterapi</a></li>
+        <li><a href="hizmet-duyu-butunleme.html" class="hover:text-gold transition">Duyu Bütünleme</a></li>
+        <li><a href="hizmet-oz-bakim-becerileri.html" class="hover:text-gold transition">Öz Bakım Becerileri</a></li>
+        <li><a href="hizmet-gunluk-yasam.html" class="hover:text-gold transition">Günlük Yaşam Aktiviteleri</a></li>
+        <li><a href="hizmet-aile-danismanligi.html" class="hover:text-gold transition">Çocuk ve Aile Danışmanlığı</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="text-white font-medium text-sm tracking-wide uppercase mb-4">İletişim</h2>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="tel:+905011774208" class="hover:text-gold transition">+90 501 177 42 08</a></li>
+        <li><a href="mailto:aleynaakeskin1@gmail.com" class="hover:text-gold transition">aleynaakeskin1@gmail.com</a></li>
+        <li class="text-white/60 leading-relaxed">Esentepe Mah. Kasap Sk.<br>Aslan Apt. No: 11 D: 4<br>Şişli / İstanbul</li>
+        <li><a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-gold transition">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+          @ergoterapist.aleyna
+        </a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
+      <p>&copy; 2026 Ergoterapist Aleyna Keskin. Tüm hakları saklıdır.</p>
+      <a href="kvkk.html" class="hover:text-white/80 transition">KVKK ve Gizlilik</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"
+   class="fixed bottom-5 right-5 z-[45] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-ink/20 hover:scale-105 transition">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+</a>
+<!-- BUILD:FOOTER:END -->
+
+<!-- BUILD:NAV_SCRIPT:START -->
+<script>
+(() => {
+  const sh = document.getElementById("site-header");
+  const onScroll = () => sh.classList.toggle("scrolled", window.scrollY > 60);
+  document.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const menuBtn = document.getElementById("menu-btn");
+  const menuClose = document.getElementById("menu-close");
+  const menu = document.getElementById("mobile-menu");
+  const backdrop = document.getElementById("mobile-menu-backdrop");
+
+  const openMenu = () => {
+    menu.classList.remove("translate-x-full");
+    backdrop.classList.remove("opacity-0", "pointer-events-none");
+    document.body.classList.add("overflow-hidden");
+    menuBtn.classList.add("menu-open");
+    menuBtn.setAttribute("aria-expanded", "true");
+    menu.setAttribute("aria-hidden", "false");
+  };
+  const closeMenu = () => {
+    menu.classList.add("translate-x-full");
+    backdrop.classList.add("opacity-0", "pointer-events-none");
+    document.body.classList.remove("overflow-hidden");
+    menuBtn.classList.remove("menu-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menu.setAttribute("aria-hidden", "true");
+  };
+
+  menuBtn.addEventListener("click", openMenu);
+  menuClose.addEventListener("click", closeMenu);
+  backdrop.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  menu.querySelectorAll(".menu-toggle").forEach(t => {
+    t.addEventListener("click", () => {
+      const panel = t.nextElementSibling;
+      const isOpen = t.getAttribute("aria-expanded") === "true";
+      t.setAttribute("aria-expanded", String(!isOpen));
+      panel.classList.toggle("open", !isOpen);
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -10% 0px" });
+  document.querySelectorAll(".fade-up").forEach(el => io.observe(el));
+})();
+</script>
+<!-- BUILD:NAV_SCRIPT:END -->
+
+<script>
+(() => {
+  const form = document.getElementById("iletisim-form");
+  const durum = document.getElementById("form-durum");
+  const WHATSAPP = "https://wa.me/905011774208?text=";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    durum.textContent = "";
+    durum.className = "text-sm text-center";
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form));
+    const endpoint = form.dataset.endpoint;
+
+    // No form backend configured yet: hand the message off to WhatsApp instead of
+    // silently dropping it. Fill data-endpoint on the <form> to switch this over.
+    if (!endpoint) {
+      const text = [
+        "Merhaba, web sitesi üzerinden yazıyorum.",
+        "",
+        "Ad: " + data.ad,
+        "Telefon: " + data.telefon,
+        data.eposta ? "E-posta: " + data.eposta : null,
+        "",
+        data.mesaj,
+      ].filter(Boolean).join("\n");
+      window.open(WHATSAPP + encodeURIComponent(text), "_blank", "noopener");
+      durum.textContent = "WhatsApp üzerinden devam edin.";
+      durum.className = "text-sm text-center text-ink-soft";
+      return;
+    }
+
+    const button = form.querySelector("button[type=submit]");
+    button.disabled = true;
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      durum.textContent = "Mesajınız iletildi. En kısa sürede size döneceğim.";
+      durum.className = "text-sm text-center text-ink";
+    } catch {
+      durum.textContent = "Mesaj gönderilemedi. WhatsApp'tan yazabilir veya doğrudan arayabilirsiniz.";
+      durum.className = "text-sm text-center text-ink";
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
