@@ -252,10 +252,16 @@ rehabilitasyon, uzay terapisi, el rehabilitasyonu ve pediatrik rehabilitasyon
 alanlarında çalışmalarımı sürdürdüm.
 
 **Alt başlık:** Katıldığım seminer ve eğitimler
+**Alt metin:** On yedi seminer ve eğitim, konularına göre.
 
 On yedi seminer üç gruba ayrıldı. Sebebi: listenin bir bölümü yetişkin alanına
 ait (iş sağlığı, sürücü rehabilitasyonu, işe uyumlandırma); düz bir listede
 bunlar çocuğa dair olanları boğuyordu. Hiçbiri çıkarılmadı.
+
+Maddeler altın renkli madde işaretiyle ve asılı girintiyle dizilir; sarılan
+satır işaretin değil metnin hizasından devam eder. Satır aralığı maddeler arası
+boşluktan küçük tutulur — aksi halde iki satıra sarılan bir maddenin ikinci
+satırı yeni bir maddeymiş gibi okunuyordu.
 
 *Çocuk gelişimi ve oyun*
 - Erken çocukluk döneminde oyun gelişimi ve yaşa uygun oyuncak seçiminin önemi
