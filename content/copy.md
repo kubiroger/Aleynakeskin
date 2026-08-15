@@ -887,7 +887,10 @@ arayabilirsiniz.
 
 ### harita
 
-**Başlık:** Konum
+Harita artık ayrı bir bölüm değil; "Doğrudan ulaşın" sütununun altında, formun
+yanındaki boşluğu dolduruyor. Bu yüzden "Konum" başlığı kaldırıldı — hemen
+üstündeki adres kartı zaten bağlamı veriyor.
+
 **Metin:** Şişli, Esentepe'deki çalışma alanımda yüz yüze görüşüyoruz.
 
 ---

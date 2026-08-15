@@ -285,61 +285,87 @@ tailwind.config = { theme: { extend: {
     <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16">
 
       <!-- BILGILER -->
-      <div class="fade-up">
+      <div class="fade-up flex flex-col">
         <h2 class="font-display text-3xl">Doğrudan ulaşın</h2>
-        <ul class="mt-8 space-y-6">
-          <li class="flex gap-4">
-            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </span>
-            <div>
-              <p class="text-sm text-ink-soft">Telefon</p>
-              <a href="tel:+905011774208" class="text-lg font-medium hover:text-gold-deep transition">+90 501 177 42 08</a>
-            </div>
+        <!-- 2-2-1: dort kisa bilgi ikiser ikiser, adres tam genislikte.
+             min-w-0 sart: e-posta tek parca uzun bir kelime, onsuz sutunu genisletir. -->
+        <ul class="mt-8 grid sm:grid-cols-2 gap-4">
+          <li class="min-w-0 flex">
+            <a href="tel:+905011774208" class="group flex-1 min-w-0 flex items-start gap-4 bg-cream rounded-3xl p-5 hover:bg-cream-deep transition">
+              <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-gold-deep" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-sm text-ink-soft">Telefon</span>
+                <span class="block text-lg font-medium group-hover:text-gold-deep transition">+90 501 177 42 08</span>
+              </span>
+            </a>
           </li>
 
-          <li class="flex gap-4">
-            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
-            </span>
-            <div>
-              <p class="text-sm text-ink-soft">WhatsApp</p>
-              <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="text-lg font-medium hover:text-gold-deep transition">Mesaj gönderin</a>
-            </div>
+          <li class="min-w-0 flex">
+            <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="group flex-1 min-w-0 flex items-start gap-4 bg-cream rounded-3xl p-5 hover:bg-cream-deep transition">
+              <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-gold-deep" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-sm text-ink-soft">WhatsApp</span>
+                <span class="block text-lg font-medium group-hover:text-gold-deep transition">Mesaj gönderin</span>
+              </span>
+            </a>
           </li>
 
-          <li class="flex gap-4">
-            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            </span>
-            <div>
-              <p class="text-sm text-ink-soft">E-posta</p>
-              <a href="mailto:aleynaakeskin1@gmail.com" class="text-lg font-medium hover:text-gold-deep transition break-all">aleynaakeskin1@gmail.com</a>
-            </div>
+          <li class="min-w-0 flex">
+            <a href="mailto:aleynaakeskin1@gmail.com" class="group flex-1 min-w-0 flex items-start gap-4 bg-cream rounded-3xl p-5 hover:bg-cream-deep transition">
+              <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-gold-deep" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-sm text-ink-soft">E-posta</span>
+                <!-- text-base: 18px'te adres kartin son iki harfini alt satira dusuruyor -->
+                <span class="block text-base font-medium group-hover:text-gold-deep transition break-all">aleynaakeskin1@gmail.com</span>
+              </span>
+            </a>
           </li>
 
-          <li class="flex gap-4">
-            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
+          <li class="min-w-0 flex">
+            <a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="group flex-1 min-w-0 flex items-start gap-4 bg-cream rounded-3xl p-5 hover:bg-cream-deep transition">
+              <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-gold-deep" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-sm text-ink-soft">Instagram</span>
+                <span class="block text-lg font-medium group-hover:text-gold-deep transition break-all">@ergoterapist.aleyna</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="sm:col-span-2 min-w-0 flex items-start gap-4 bg-cream rounded-3xl p-5">
+            <span class="shrink-0 w-11 h-11 rounded-full bg-white flex items-center justify-center text-gold-deep" aria-hidden="true">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </span>
-            <div>
+            <div class="min-w-0">
               <p class="text-sm text-ink-soft">Adres</p>
-              <p class="text-lg font-medium leading-snug">Esentepe Mah. Kasap Sk.<br>Aslan Apt. No: 11 D: 4<br>Şişli / İstanbul</p>
-            </div>
-          </li>
-
-          <li class="flex gap-4">
-            <span class="shrink-0 w-11 h-11 rounded-full bg-cream flex items-center justify-center text-gold-deep" aria-hidden="true">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-            </span>
-            <div>
-              <p class="text-sm text-ink-soft">Instagram</p>
-              <a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="text-lg font-medium hover:text-gold-deep transition">@ergoterapist.aleyna</a>
+              <p class="text-lg font-medium leading-snug">Esentepe Mah. Kasap Sk. Aslan Apt. No: 11 D: 4<br>Şişli / İstanbul</p>
             </div>
           </li>
         </ul>
 
         <!-- MÜŞTERİDEN: calisma saatleri. Geldiginde bu blogu doldurun. -->
+
+        <!-- Harita, formun yanindaki bos alani doldurur. flex-1 sayesinde sutunun
+             kalan yuksekligini alir; tek sutuna dusunce min-h devreye girer. -->
+        <div id="harita" class="mt-6 flex-1 flex flex-col">
+          <p class="text-sm text-ink-soft">
+            Şişli, Esentepe'deki çalışma alanımda yüz yüze görüşüyoruz.
+          </p>
+          <div class="mt-3 flex-1 min-h-[260px] rounded-3xl overflow-hidden bg-cream">
+            <iframe
+              title="Konum haritası"
+              src="https://www.google.com/maps?q=Esentepe%20Mahallesi%20Kasap%20Sokak%20%C5%9Ei%C5%9Fli%20%C4%B0stanbul&output=embed"
+              class="w-full h-full min-h-[260px] block" style="border:0" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </div>
 
       <!-- FORM -->
@@ -403,25 +429,6 @@ tailwind.config = { theme: { extend: {
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- HARITA -->
-  <section id="harita" class="py-16 sm:py-20 px-6 bg-cream">
-    <div class="max-w-[1440px] mx-auto">
-      <div class="max-w-2xl fade-up">
-        <h2 class="font-display text-3xl">Konum</h2>
-        <p class="text-ink-soft leading-relaxed mt-4">
-          Şişli, Esentepe'deki çalışma alanımda yüz yüze görüşüyoruz.
-        </p>
-      </div>
-      <div class="rounded-4xl overflow-hidden mt-8 fade-up">
-        <iframe
-          title="Konum haritası"
-          src="https://www.google.com/maps?q=Esentepe%20Mahallesi%20Kasap%20Sokak%20%C5%9Ei%C5%9Fli%20%C4%B0stanbul&output=embed"
-          width="100%" height="420" style="border:0" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
     </div>
   </section>
 
