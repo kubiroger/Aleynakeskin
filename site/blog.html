@@ -8,7 +8,7 @@
 <title>Blog | Ailelere Yönelik Yazılar — Aleyna Keskin</title>
 <meta name="description" content="Çocuk gelişimi, duyu bütünleme, motor beceriler ve ebeveynlik üzerine ailelere yönelik bilgilendirici yazılar.">
 <link rel="canonical" href="https://aleynakeskin.vercel.app/blog.html">
-<meta name="theme-color" content="#2B2724">
+<meta name="theme-color" content="#1F1C19">
 
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -28,7 +28,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = { theme: { extend: {
-  colors: {"ink":{"DEFAULT":"#2B2724","soft":"#6B635C","mid":"#453E37"},"gold":{"DEFAULT":"#C89B6B","deep":"#A97C4F","soft":"#EBE6DC"},"cream":{"DEFAULT":"#EFF3EC","deep":"#E6EDE3"},"terracotta":"#D98E6A","sage":"#8FA98B"},
+  colors: {"ink":{"DEFAULT":"#1F1C19","soft":"#5F574F","mid":"#3A342E"},"gold":{"DEFAULT":"#C89B6B","deep":"#8A5E31","soft":"#EBE6DC"},"cream":{"DEFAULT":"#F8FBF7","deep":"#E4EDE0"}},
   fontFamily: {
     sans: ["Figtree", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
     display: ["Playfair Display", "Georgia", "serif"]
@@ -88,7 +88,7 @@ tailwind.config = { theme: { extend: {
   .nav-item:hover .dropdown-panel, .nav-item:focus-within .dropdown-panel { opacity: 1; visibility: visible; transform: none; }
 
   /* Mobile drawer */
-  #menu-btn .menu-line { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background: #2B2724; border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, width .35s cubic-bezier(.4,0,.2,1); }
+  #menu-btn .menu-line { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background: #1F1C19; border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, width .35s cubic-bezier(.4,0,.2,1); }
   #menu-btn .menu-line-1 { transform: translate(-50%, -7px); }
   #menu-btn .menu-line-2 { width: 14px; transform: translate(calc(-50% + 3px), 0); }
   #menu-btn .menu-line-3 { transform: translate(-50%, 7px); }
@@ -108,17 +108,24 @@ tailwind.config = { theme: { extend: {
   .card-img { transition: transform .5s cubic-bezier(.2,0,0,1); }
   .card:hover .card-img { transform: scale(1.04); }
 
+  /* Zemin neredeyse beyaz oldugu icin beyaz bir kart artik renkle degil
+     golgesiyle ayrilir. Golge, bolum zemini degistirmeden ayirma isini gorur --
+     sayfayi kutulara bolen sey zemin degisimiydi, kartin kendisi degil. */
+  .yuzey { background: #fff; box-shadow: 0 1px 2px rgba(31,28,25,.04), 0 8px 24px -12px rgba(31,28,25,.14); }
+  a.yuzey, button.yuzey { transition: box-shadow .3s cubic-bezier(.2,0,0,1), transform .14s cubic-bezier(.2,0,0,1); }
+  a.yuzey:hover, button.yuzey:hover { box-shadow: 0 2px 4px rgba(31,28,25,.05), 0 16px 36px -14px rgba(31,28,25,.20); }
+
   /* Process timeline with a scroll-driven fill */
   .tl-line, #tl-fill { position: absolute; left: 11px; top: 0; width: 3px; border-radius: 2px; }
-  .tl-line { bottom: 0; background: rgba(43,39,36,.10); }
-  #tl-fill { height: 0; background: #8FA98B; transition: height .15s linear; }
-  .tl-marker { position: absolute; left: 0; top: 2px; width: 25px; height: 25px; border-radius: 8px; background: #fff; border: 1px solid rgba(43,39,36,.14); display: flex; align-items: center; justify-content: center; transition: background .3s ease, border-color .3s ease; }
-  .tl-marker::after { content: ""; width: 9px; height: 9px; border-radius: 3px; background: rgba(43,39,36,.18); transition: background .3s ease; }
-  .tl-step.is-passed .tl-marker { background: #8FA98B; border-color: #8FA98B; }
+  .tl-line { bottom: 0; background: rgba(31,28,25,.10); }
+  #tl-fill { height: 0; background: #C89B6B; transition: height .15s linear; }
+  .tl-marker { position: absolute; left: 0; top: 2px; width: 25px; height: 25px; border-radius: 8px; background: #fff; border: 1px solid rgba(31,28,25,.14); display: flex; align-items: center; justify-content: center; transition: background .3s ease, border-color .3s ease; }
+  .tl-marker::after { content: ""; width: 9px; height: 9px; border-radius: 3px; background: rgba(31,28,25,.18); transition: background .3s ease; }
+  .tl-step.is-passed .tl-marker { background: #C89B6B; border-color: #C89B6B; }
   .tl-step.is-passed .tl-marker::after { background: #fff; }
 
   /* FAQ */
-  details.faq { border-bottom: 1px solid rgba(43,39,36,.10); }
+  details.faq { border-bottom: 1px solid rgba(31,28,25,.10); }
   details.faq summary { list-style: none; cursor: pointer; }
   details.faq summary::-webkit-details-marker { display: none; }
   details.faq[open] summary .faq-icon { transform: rotate(45deg); }
@@ -132,24 +139,24 @@ tailwind.config = { theme: { extend: {
   .prose ul { list-style: disc; }
   .prose ol { list-style: decimal; }
   .prose li { margin-bottom: .4rem; }
-  .prose a { color: #A97C4F; text-decoration: underline; text-underline-offset: 3px; }
+  .prose a { color: #8A5E31; text-decoration: underline; text-underline-offset: 3px; }
   .prose strong { font-weight: 600; }
-  .prose blockquote { border-left: 3px solid #C89B6B; padding-left: 1.15rem; margin: 1.5rem 0; color: #6B635C; }
+  .prose blockquote { border-left: 3px solid #C89B6B; padding-left: 1.15rem; margin: 1.5rem 0; color: #5F574F; }
 
   /* --- Mobil: uygulama benzeri alt sekme cubugu --- */
   #tab-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 46;
     display: grid; grid-template-columns: repeat(5, 1fr);
     background: rgba(255,255,255,.94); backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(43,39,36,.08);
+    border-top: 1px solid rgba(31,28,25,.08);
     padding-bottom: env(safe-area-inset-bottom); }
   .tab-item { display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 4px; min-height: 58px; padding: 8px 4px; color: #6B635C;
+    gap: 4px; min-height: 58px; padding: 8px 4px; color: #5F574F;
     font-size: 11px; line-height: 1.1; text-align: center;
     -webkit-tap-highlight-color: transparent; transition: color .2s ease; }
   .tab-item svg { width: 22px; height: 22px; }
-  .tab-item.is-active { color: #2B2724; }
-  .tab-item.is-active svg { color: #A97C4F; }
-  .tab-item:active { background: rgba(43,39,36,.05); }
+  .tab-item.is-active { color: #1F1C19; }
+  .tab-item.is-active svg { color: #8A5E31; }
+  .tab-item:active { background: rgba(31,28,25,.05); }
   .tab-item-wa { color: #128C4A; }
   /* Alt cubuk icerigi ortmesin */
   @media (max-width: 1023px) { body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); } }
@@ -188,9 +195,9 @@ tailwind.config = { theme: { extend: {
 
   /* Yuksek kontrast: yuzeyler tam opak ve sinirlari tanimli olur. */
   @media (prefers-contrast: more) {
-    #site-header > div { background: #fff; border: 1px solid #2B2724; }
-    #tab-bar { background: #fff; border-top-color: #2B2724; }
-    .tab-item { color: #453E37; }
+    #site-header > div { background: #fff; border: 1px solid #1F1C19; }
+    #tab-bar { background: #fff; border-top-color: #1F1C19; }
+    .tab-item { color: #3A342E; }
   }
 </style>
 
@@ -206,47 +213,47 @@ tailwind.config = { theme: { extend: {
       <a href="index.html" class="shrink-0" aria-label="Anasayfa"><img src="assets/logo.webp" alt="Ergoterapist Aleyna Keskin" width="1034" height="254" class="h-10 w-auto"></a>
 
       <nav class="hidden lg:flex items-center gap-0.5 text-sm" aria-label="Ana menü">
-        <a href="index.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">Anasayfa</a>
-        <a href="hakkimda.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">Hakkımda</a>
+        <a href="index.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream-deep text-ink-soft hover:text-ink">Anasayfa</a>
+        <a href="hakkimda.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream-deep text-ink-soft hover:text-ink">Hakkımda</a>
         <div class="nav-item relative">
-          <a href="hizmetler.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink inline-flex items-center gap-1">
+          <a href="hizmetler.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream-deep text-ink-soft hover:text-ink inline-flex items-center gap-1">
             Hizmetler
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="dropdown-panel absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[22rem]">
             <div class="bg-white rounded-2xl shadow-xl shadow-ink/10 border border-ink/5 p-2">
-            <a href="hizmet-ergoterapi.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+            <a href="hizmet-ergoterapi.html" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Ergoterapi</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Günlük hayata katılımı anlamlı etkinliklerle desteklemek</span>
             </a>
-            <a href="hizmet-duyu-butunleme.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+            <a href="hizmet-duyu-butunleme.html" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Duyu Bütünleme</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Duyusal bilgiyi işleme biçimini anlamak ve uyumu kolaylaştırmak</span>
             </a>
-            <a href="hizmet-oz-bakim-becerileri.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+            <a href="hizmet-oz-bakim-becerileri.html" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Öz Bakım Becerileri</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Giyinme, beslenme ve bakımda yaşına uygun bağımsızlık</span>
             </a>
-            <a href="hizmet-gunluk-yasam.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+            <a href="hizmet-gunluk-yasam.html" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Günlük Yaşam Aktiviteleri</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Ev, okul ve sosyal ortamdaki rutinlerde katılım</span>
             </a>
-            <a href="hizmet-aile-danismanligi.html" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+            <a href="hizmet-aile-danismanligi.html" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">Çocuk ve Aile Danışmanlığı</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">Ebeveynin evde uygulayabileceği somut yaklaşımlar</span>
             </a>
             </div>
           </div>
         </div>
-        <a href="blog.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink font-medium">Blog</a>
-        <a href="iletisim.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream text-ink-soft hover:text-ink">İletişim</a>
+        <a href="blog.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream-deep text-ink font-medium">Blog</a>
+        <a href="iletisim.html" class="px-3.5 py-2 rounded-full transition hover:bg-cream-deep text-ink-soft hover:text-ink">İletişim</a>
       </nav>
 
       <div class="flex items-center gap-2">
         <a href="https://wa.me/905011774208?text=Merhaba%2C%20%C3%A7ocu%C4%9Fum%20i%C3%A7in%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-ink text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ink-mid transition">
           Randevu Talep Edin
         </a>
-        <button id="menu-btn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative w-10 h-10 rounded-full hover:bg-cream transition">
+        <button id="menu-btn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative w-10 h-10 rounded-full hover:bg-cream-deep transition">
           <span class="menu-line menu-line-1"></span>
           <span class="menu-line menu-line-2"></span>
           <span class="menu-line menu-line-3"></span>
@@ -263,30 +270,30 @@ tailwind.config = { theme: { extend: {
 <aside id="mobile-menu" class="fixed top-0 right-0 z-[60] h-full w-[86%] max-w-sm bg-white translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl" aria-hidden="true" aria-label="Mobil menü">
   <div class="flex items-center justify-between px-5 py-4 border-b border-ink/10 shrink-0">
     <img src="assets/logo.webp" alt="Ergoterapist Aleyna Keskin" width="1034" height="254" class="h-9 w-auto">
-    <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream transition">
+    <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream-deep transition">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
 
   <nav class="flex-1 overflow-y-auto overscroll-contain px-3 py-2" aria-label="Mobil ana menü">
-    <a href="index.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">Anasayfa</a>
-    <a href="hakkimda.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">Hakkımda</a>
-    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream transition text-left" aria-expanded="false">
+    <a href="index.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream-deep text-ink">Anasayfa</a>
+    <a href="hakkimda.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream-deep text-ink">Hakkımda</a>
+    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream-deep transition text-left" aria-expanded="false">
       <span class="text-ink">Hizmetler</span>
       <svg class="chevron transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
     </button>
     <div class="menu-panel grid overflow-hidden">
       <div class="min-h-0 pl-3 pb-1">
-        <a href="hizmetler.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream transition">Tüm hizmetler</a>
-        <a href="hizmet-ergoterapi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Ergoterapi</a>
-        <a href="hizmet-duyu-butunleme.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Duyu Bütünleme</a>
-        <a href="hizmet-oz-bakim-becerileri.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Öz Bakım Becerileri</a>
-        <a href="hizmet-gunluk-yasam.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Günlük Yaşam Aktiviteleri</a>
-        <a href="hizmet-aile-danismanligi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">Çocuk ve Aile Danışmanlığı</a>
+        <a href="hizmetler.html" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream-deep transition">Tüm hizmetler</a>
+        <a href="hizmet-ergoterapi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">Ergoterapi</a>
+        <a href="hizmet-duyu-butunleme.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">Duyu Bütünleme</a>
+        <a href="hizmet-oz-bakim-becerileri.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">Öz Bakım Becerileri</a>
+        <a href="hizmet-gunluk-yasam.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">Günlük Yaşam Aktiviteleri</a>
+        <a href="hizmet-aile-danismanligi.html" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">Çocuk ve Aile Danışmanlığı</a>
       </div>
     </div>
-    <a href="blog.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink font-medium">Blog</a>
-    <a href="iletisim.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream text-ink">İletişim</a>
+    <a href="blog.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream-deep text-ink font-medium">Blog</a>
+    <a href="iletisim.html" class="block px-3 py-3.5 rounded-xl transition hover:bg-cream-deep text-ink">İletişim</a>
   </nav>
 
   <div class="border-t border-ink/10 p-4 space-y-2.5 shrink-0">
@@ -315,7 +322,7 @@ tailwind.config = { theme: { extend: {
     <div class="max-w-[1440px] mx-auto">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- BUILD:POST_LIST:START -->
-        <a href="blog/ergoterapiye-ne-zaman-basvurulur.html" class="card group block bg-white rounded-4xl overflow-hidden border border-ink/5 hover:border-gold/50 transition">
+        <a href="blog/ergoterapiye-ne-zaman-basvurulur.html" class="card group block yuzey rounded-4xl overflow-hidden">
           <div class="h-44 overflow-hidden">
             <img src="assets/placeholder/ph-blog-3.webp" alt="" width="1200" height="800" loading="lazy" class="card-img w-full h-full object-cover">
           </div>
@@ -326,7 +333,7 @@ tailwind.config = { theme: { extend: {
             <span class="inline-block text-sm text-gold-deep font-medium mt-4">Yazıyı okuyun &rarr;</span>
           </div>
         </a>
-        <a href="blog/okul-oncesi-ince-motor-beceriler.html" class="card group block bg-white rounded-4xl overflow-hidden border border-ink/5 hover:border-gold/50 transition">
+        <a href="blog/okul-oncesi-ince-motor-beceriler.html" class="card group block yuzey rounded-4xl overflow-hidden">
           <div class="h-44 overflow-hidden">
             <img src="assets/placeholder/ph-blog-2.webp" alt="" width="1200" height="800" loading="lazy" class="card-img w-full h-full object-cover">
           </div>
@@ -337,7 +344,7 @@ tailwind.config = { theme: { extend: {
             <span class="inline-block text-sm text-gold-deep font-medium mt-4">Yazıyı okuyun &rarr;</span>
           </div>
         </a>
-        <a href="blog/duyu-butunleme-nedir.html" class="card group block bg-white rounded-4xl overflow-hidden border border-ink/5 hover:border-gold/50 transition">
+        <a href="blog/duyu-butunleme-nedir.html" class="card group block yuzey rounded-4xl overflow-hidden">
           <div class="h-44 overflow-hidden">
             <img src="assets/placeholder/ph-blog-1.webp" alt="" width="1200" height="800" loading="lazy" class="card-img w-full h-full object-cover">
           </div>

@@ -15,15 +15,18 @@
 Bu kısıtlar **her task için geçerlidir**, tekrar edilmese bile.
 
 **Renk paleti** (yalnız bu hex'ler kullanılır):
-- `cream` `#EFF3EC` — sayfa zemini, kart arka planı
-- `gold` `#C89B6B` — birincil vurgu, butonlar, ayraçlar
-- `gold-soft` `#EBE6DC` — rozet ve şerit zeminleri
-- `gold-deep` `#A97C4F` — hover, altın üstü metin
-- `terracotta` `#D98E6A` — ikincil vurgu
-- `sage` `#8FA98B` — üçüncül vurgu
-- `ink` `#2B2724` — ana metin ve başlıklar
-- `ink-soft` `#6B635C` — ikincil metin
-- `white` `#FFFFFF` — yükseltilmiş kart, form alanı
+- `white` `#FFFFFF` — baskın bölüm zemini ve kart yüzeyi
+- `cream` `#F8FBF7` — seyrek ikinci bölüm zemini
+- `cream-deep` `#E4EDE0` — tek yeşil yüzey (ikon halkası, hover satırı)
+- `gold` `#C89B6B` — yalnız dekoratif; metin taşımaz
+- `gold-soft` `#EBE6DC` — rozet zemini
+- `gold-deep` `#8A5E31` — bağlantı ve vurgu metni
+- `ink` `#1F1C19` — ana metin ve başlıklar
+- `ink-soft` `#5F574F` — ikincil metin
+- `ink-mid` `#3A342E` — buton hover
+
+Beyaz kart beyaz zeminden `.yuzey` sınıfının gölgesiyle ayrılır, renkle değil.
+Bir sayfada zemin değişimi dörtten fazla olamaz.
 
 Altın geniş alan doldurmaz, vurgudur. Bir bölümde terracotta ve sage birlikte kullanılmaz. **Altın üstüne beyaz metin yazılmaz** (kontrast yetersiz) — `ink` veya `gold-deep` kullanılır.
 

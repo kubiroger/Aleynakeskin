@@ -6,21 +6,28 @@
 
 const SITE = "https://aleynakeskin.vercel.app"; // TODO: alan adi baglanınca gercek adresle degistir
 
-// Design tokens -- the approved "warm earth" palette. Do not swap these for
-// colours sampled from the current logo file: that logo is a placeholder the
-// client may still change.
+// Design tokens. Do not swap these for colours sampled from the current logo
+// file: that logo is a placeholder the client may still change.
 //
-// `cream` is the page canvas. It used to be a warm off-white (#FBF8F3); it is
-// now a light tint of the palette's own `sage`, so the flat background of the
-// hero photographs blends into the page instead of ending in a hard rectangle.
-// `gold.soft` lost about half its saturation at the same time -- at full
-// strength it read pink against the greener canvas.
+// Three families, on purpose. `terracotta` and `sage` used to sit here and were
+// never used in a single page -- a palette that lists colours nobody reaches for
+// reads as indecision.
+//
+// The canvas is near-white rather than a mid cream. Freshness comes from the
+// range between the darkest and lightest values, not from tinting the page: with
+// a light canvas a white card separates by its shadow instead of by a colour
+// change, which is what keeps a long page from reading as a stack of boxes.
+// `cream.deep` is the one green surface, and it is meant to be rare.
+//
+// `gold` stays decorative -- rules, icons, dividers. `gold.deep` carries text
+// and was darkened from #A97C4F, which only reached 3.3:1 on the canvas. Its
+// exact value is set by the worst case it has to survive: gold.deep on
+// gold.soft, the badge pairing, which needs 4.5:1. That lands it at 5.4:1 on
+// the canvas rather than the 5.1 a canvas-only calculation would have chosen.
 const TOKENS = {
-  ink: { DEFAULT: "#2B2724", soft: "#6B635C", mid: "#453E37" },
-  gold: { DEFAULT: "#C89B6B", deep: "#A97C4F", soft: "#EBE6DC" },
-  cream: { DEFAULT: "#EFF3EC", deep: "#E6EDE3" },
-  terracotta: "#D98E6A",
-  sage: "#8FA98B",
+  ink: { DEFAULT: "#1F1C19", soft: "#5F574F", mid: "#3A342E" },
+  gold: { DEFAULT: "#C89B6B", deep: "#8A5E31", soft: "#EBE6DC" },
+  cream: { DEFAULT: "#F8FBF7", deep: "#E4EDE0" },
 };
 
 const SHARED_CSS = `
@@ -40,7 +47,7 @@ const SHARED_CSS = `
   h3, h3.font-display { letter-spacing: -0.008em; }
   section[id] { scroll-margin-top: 6.5rem; }
   a, button, input, select, textarea { touch-action: manipulation; }
-  :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid #C89B6B; outline-offset: 2px; border-radius: 4px; }
+  :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid ${TOKENS.gold.DEFAULT}; outline-offset: 2px; border-radius: 4px; }
   .bg-ink :is(a, button, input, select):focus-visible { outline-color: ${TOKENS.gold.soft}; }
 
   /* Basma geri bildirimi. Dokunmatikte hover yok: bu kural olmadan bir butona
@@ -55,8 +62,8 @@ const SHARED_CSS = `
 
   /* Gold rule with a dot -- the divider motif from the business card */
   .rule-gold { display: flex; align-items: center; gap: .5rem; }
-  .rule-gold::before { content: ""; height: 1px; width: 100%; max-width: 8rem; background: linear-gradient(to right, #C89B6B, rgba(200,155,107,.25)); }
-  .rule-gold::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #C89B6B; flex-shrink: 0; }
+  .rule-gold::before { content: ""; height: 1px; width: 100%; max-width: 8rem; background: linear-gradient(to right, ${TOKENS.gold.DEFAULT}, rgba(200,155,107,.25)); }
+  .rule-gold::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: ${TOKENS.gold.DEFAULT}; flex-shrink: 0; }
 
   /* Header: floating pill that expands to a full-width bar on scroll.
      Gercek bir malzeme gibi davranmasi icin altindaki icerik gorunur kalir --
@@ -72,7 +79,7 @@ const SHARED_CSS = `
   .nav-item:hover .dropdown-panel, .nav-item:focus-within .dropdown-panel { opacity: 1; visibility: visible; transform: none; }
 
   /* Mobile drawer */
-  #menu-btn .menu-line { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background: #2B2724; border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, width .35s cubic-bezier(.4,0,.2,1); }
+  #menu-btn .menu-line { position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; background: ${TOKENS.ink.DEFAULT}; border-radius: 2px; transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .2s ease, width .35s cubic-bezier(.4,0,.2,1); }
   #menu-btn .menu-line-1 { transform: translate(-50%, -7px); }
   #menu-btn .menu-line-2 { width: 14px; transform: translate(calc(-50% + 3px), 0); }
   #menu-btn .menu-line-3 { transform: translate(-50%, 7px); }
@@ -92,17 +99,24 @@ const SHARED_CSS = `
   .card-img { transition: transform .5s cubic-bezier(.2,0,0,1); }
   .card:hover .card-img { transform: scale(1.04); }
 
+  /* Zemin neredeyse beyaz oldugu icin beyaz bir kart artik renkle degil
+     golgesiyle ayrilir. Golge, bolum zemini degistirmeden ayirma isini gorur --
+     sayfayi kutulara bolen sey zemin degisimiydi, kartin kendisi degil. */
+  .yuzey { background: #fff; box-shadow: 0 1px 2px rgba(31,28,25,.04), 0 8px 24px -12px rgba(31,28,25,.14); }
+  a.yuzey, button.yuzey { transition: box-shadow .3s cubic-bezier(.2,0,0,1), transform .14s cubic-bezier(.2,0,0,1); }
+  a.yuzey:hover, button.yuzey:hover { box-shadow: 0 2px 4px rgba(31,28,25,.05), 0 16px 36px -14px rgba(31,28,25,.20); }
+
   /* Process timeline with a scroll-driven fill */
   .tl-line, #tl-fill { position: absolute; left: 11px; top: 0; width: 3px; border-radius: 2px; }
-  .tl-line { bottom: 0; background: rgba(43,39,36,.10); }
-  #tl-fill { height: 0; background: #8FA98B; transition: height .15s linear; }
-  .tl-marker { position: absolute; left: 0; top: 2px; width: 25px; height: 25px; border-radius: 8px; background: #fff; border: 1px solid rgba(43,39,36,.14); display: flex; align-items: center; justify-content: center; transition: background .3s ease, border-color .3s ease; }
-  .tl-marker::after { content: ""; width: 9px; height: 9px; border-radius: 3px; background: rgba(43,39,36,.18); transition: background .3s ease; }
-  .tl-step.is-passed .tl-marker { background: #8FA98B; border-color: #8FA98B; }
+  .tl-line { bottom: 0; background: rgba(31,28,25,.10); }
+  #tl-fill { height: 0; background: ${TOKENS.gold.DEFAULT}; transition: height .15s linear; }
+  .tl-marker { position: absolute; left: 0; top: 2px; width: 25px; height: 25px; border-radius: 8px; background: #fff; border: 1px solid rgba(31,28,25,.14); display: flex; align-items: center; justify-content: center; transition: background .3s ease, border-color .3s ease; }
+  .tl-marker::after { content: ""; width: 9px; height: 9px; border-radius: 3px; background: rgba(31,28,25,.18); transition: background .3s ease; }
+  .tl-step.is-passed .tl-marker { background: ${TOKENS.gold.DEFAULT}; border-color: ${TOKENS.gold.DEFAULT}; }
   .tl-step.is-passed .tl-marker::after { background: #fff; }
 
   /* FAQ */
-  details.faq { border-bottom: 1px solid rgba(43,39,36,.10); }
+  details.faq { border-bottom: 1px solid rgba(31,28,25,.10); }
   details.faq summary { list-style: none; cursor: pointer; }
   details.faq summary::-webkit-details-marker { display: none; }
   details.faq[open] summary .faq-icon { transform: rotate(45deg); }
@@ -116,24 +130,24 @@ const SHARED_CSS = `
   .prose ul { list-style: disc; }
   .prose ol { list-style: decimal; }
   .prose li { margin-bottom: .4rem; }
-  .prose a { color: #A97C4F; text-decoration: underline; text-underline-offset: 3px; }
+  .prose a { color: ${TOKENS.gold.deep}; text-decoration: underline; text-underline-offset: 3px; }
   .prose strong { font-weight: 600; }
-  .prose blockquote { border-left: 3px solid #C89B6B; padding-left: 1.15rem; margin: 1.5rem 0; color: #6B635C; }
+  .prose blockquote { border-left: 3px solid ${TOKENS.gold.DEFAULT}; padding-left: 1.15rem; margin: 1.5rem 0; color: ${TOKENS.ink.soft}; }
 
   /* --- Mobil: uygulama benzeri alt sekme cubugu --- */
   #tab-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 46;
     display: grid; grid-template-columns: repeat(5, 1fr);
     background: rgba(255,255,255,.94); backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(43,39,36,.08);
+    border-top: 1px solid rgba(31,28,25,.08);
     padding-bottom: env(safe-area-inset-bottom); }
   .tab-item { display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 4px; min-height: 58px; padding: 8px 4px; color: #6B635C;
+    gap: 4px; min-height: 58px; padding: 8px 4px; color: ${TOKENS.ink.soft};
     font-size: 11px; line-height: 1.1; text-align: center;
     -webkit-tap-highlight-color: transparent; transition: color .2s ease; }
   .tab-item svg { width: 22px; height: 22px; }
-  .tab-item.is-active { color: #2B2724; }
-  .tab-item.is-active svg { color: #A97C4F; }
-  .tab-item:active { background: rgba(43,39,36,.05); }
+  .tab-item.is-active { color: ${TOKENS.ink.DEFAULT}; }
+  .tab-item.is-active svg { color: ${TOKENS.gold.deep}; }
+  .tab-item:active { background: rgba(31,28,25,.05); }
   .tab-item-wa { color: #128C4A; }
   /* Alt cubuk icerigi ortmesin */
   @media (max-width: 1023px) { body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); } }
@@ -198,7 +212,7 @@ function head({ title, description, path = "", image = "assets/og-image.jpg", js
 <title>${title}</title>
 <meta name="description" content="${description}">
 <link rel="canonical" href="${url}">
-<meta name="theme-color" content="#2B2724">
+<meta name="theme-color" content="${TOKENS.ink.DEFAULT}">
 
 <link rel="icon" href="${prefix}favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32.png">

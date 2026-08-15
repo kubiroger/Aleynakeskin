@@ -58,7 +58,7 @@ function renderPostCard(post, prefix = "") {
           </div>`
     : "";
 
-  return `        <a href="${prefix}blog/${post.slug}.html" class="card group block bg-white rounded-4xl overflow-hidden border border-ink/5 hover:border-gold/50 transition">
+  return `        <a href="${prefix}blog/${post.slug}.html" class="card group block yuzey rounded-4xl overflow-hidden">
           ${cover}
           <div class="p-6">
             <time datetime="${post.date}" class="text-xs text-ink-soft">${trFormat(post.date)}</time>

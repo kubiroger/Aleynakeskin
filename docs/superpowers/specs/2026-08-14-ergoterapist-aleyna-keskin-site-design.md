@@ -30,29 +30,35 @@ sloganı ve dört temel hizmet başlığı.
 Kaynak: müşterinin kartviziti (krem zemin, altın-bej vurgu, siyah serif isim, martı + güneş imgesi,
 "Duyu Bütünleme • Gelişimsel Destek" alt başlığı).
 
-### 2.1 Renk paleti — "Sıcak toprak"
+### 2.1 Renk paleti — "Berrak"
 
-| Rol | Hex | Kullanım |
-|---|---|---|
-| `cream` | `#EFF3EC` | Sayfa zemini, kart arka planı |
-| `cream-deep` | `#E6EDE3` | Zeminin bir ton koyusu |
-| `gold` | `#C89B6B` | Birincil vurgu, butonlar, ayraç çizgileri, ikon dolguları |
-| `gold-soft` | `#EBE6DC` | Rozet ve şerit zeminleri, koyu bölümlerde odak halkası |
-| `gold-deep` | `#A97C4F` | Hover, altın üstü metin kontrastı |
-| `terracotta` | `#D98E6A` | İkincil vurgu — sıcaklık, çocuk temalı bölümler |
-| `sage` | `#8FA98B` | Üçüncül vurgu — sakinlik, süreç/timeline bölümleri |
-| `ink` | `#2B2724` | Ana metin, başlıklar |
-| `ink-soft` | `#6B635C` | İkincil metin |
-| `white` | `#FFFFFF` | Yükseltilmiş kartlar, form alanları |
+| Rol | Hex | Kullanım | Kontrast |
+|---|---|---|---|
+| `white` | `#FFFFFF` | Baskın bölüm zemini ve kart yüzeyi | — |
+| `cream` | `#F8FBF7` | Seyrek kullanılan ikinci bölüm zemini | — |
+| `cream-deep` | `#E4EDE0` | Tek yeşil yüzey: ikon halkaları, hover satırları | — |
+| `gold` | `#C89B6B` | Yalnız dekoratif — ayraç, ikon, çizgi. Metin taşımaz. | — |
+| `gold-soft` | `#EBE6DC` | Rozet zemini, koyu bölümlerde odak halkası | — |
+| `gold-deep` | `#8A5E31` | Bağlantı ve vurgu metni | 5.4 / krem |
+| `ink` | `#1F1C19` | Ana metin, başlıklar, koyu butonlar | 16.3 / krem |
+| `ink-soft` | `#5F574F` | İkincil metin | 6.8 / krem |
+| `ink-mid` | `#3A342E` | Buton hover, koyu ikinci yüzey | — |
 
-Zemin başlangıçta sıcak bir kırık beyazdı (`#FBF8F3`). Hero fotoğraflarının düz
-arka planı (`#C9C1AC`) sayfa üstünde belirgin bir dikdörtgen olarak durduğu için
-zemin, paletin kendi `sage` tonunun açık varyantına taşındı; iki yüzey artık
-keskin bir kenarla karşılaşmıyor. `gold-soft` aynı anda doygunluğunun yaklaşık
-yarısını bıraktı — tam gücünde yeşilimsi zeminin yanında pembe okunuyordu.
+Üç renk ailesi, bilerek. `terracotta` (`#D98E6A`) ve `sage` (`#8FA98B`) burada
+duruyordu ve hiçbir sayfada bir kez bile kullanılmadı — kimsenin uzanmadığı
+renkleri listeleyen bir palet kararsızlık okutur; ikisi de kaldırıldı.
 
-Kural: altın **vurgu** rengidir, geniş alan doldurmaz. Terracotta ve sage yardımcıdır; bir
-bölümde ikisi birden kullanılmaz.
+Zemin, orta tonda bir krem değil neredeyse beyaz. Ferahlık sayfayı boyamaktan
+değil, en koyu ile en açık arasındaki aralıktan geliyor: açık zeminde beyaz bir
+kart renkle değil **gölgesiyle** ayrılır, uzun bir sayfayı kutu yığınına
+çeviren şey zemin değişimiydi, kartın kendisi değil.
+
+`gold-deep`'in değerini en zor eşleşme belirledi: rozetlerdeki `gold-soft`
+üstünde 4.5 gerekiyordu. Eski `#A97C4F` zeminde 3.3'te kalıyordu.
+
+**Kurallar.** Altın geniş alan doldurmaz ve metin taşımaz — metin `gold-deep`'in
+işi. `cream` bir sayfada en fazla iki bölümde kullanılır; ayırma işini boşluk
+yapar, renk değil. Bir sayfada zemin değişimi **dörtten fazla olamaz**.
 
 ### 2.2 Tipografi
 

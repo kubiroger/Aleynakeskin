@@ -28,13 +28,13 @@ const isActive = (page, href) => href === page || (page === "index.html" && href
 function renderHeader(page, prefix = "") {
   const desktopLinks = LINKS.map((l) => {
     const active = isActive(page, l.href) || (l.children && l.children.some((c) => c.href === page));
-    const base = `px-3.5 py-2 rounded-full transition hover:bg-cream ${active ? "text-ink font-medium" : "text-ink-soft hover:text-ink"}`;
+    const base = `px-3.5 py-2 rounded-full transition hover:bg-cream-deep ${active ? "text-ink font-medium" : "text-ink-soft hover:text-ink"}`;
 
     if (!l.children) return `        <a href="${prefix}${l.href}" class="${base}">${l.label}</a>`;
 
     const panel = l.children
       .map(
-        (c) => `            <a href="${prefix}${c.href}" class="block rounded-xl px-4 py-3 hover:bg-cream transition group/item">
+        (c) => `            <a href="${prefix}${c.href}" class="block rounded-xl px-4 py-3 hover:bg-cream-deep transition group/item">
               <span class="block font-medium text-ink group-hover/item:text-gold-deep transition">${c.title}</span>
               <span class="block text-xs text-ink-soft mt-0.5 leading-relaxed">${c.blurb}</span>
             </a>`
@@ -67,7 +67,7 @@ ${desktopLinks}
         <a href="${WHATSAPP}" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-ink text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ink-mid transition">
           Randevu Talep Edin
         </a>
-        <button id="menu-btn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative w-10 h-10 rounded-full hover:bg-cream transition">
+        <button id="menu-btn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative w-10 h-10 rounded-full hover:bg-cream-deep transition">
           <span class="menu-line menu-line-1"></span>
           <span class="menu-line menu-line-2"></span>
           <span class="menu-line menu-line-3"></span>
@@ -81,21 +81,21 @@ ${desktopLinks}
 function renderMobileMenu(page, prefix = "") {
   const items = LINKS.map((l) => {
     const active = isActive(page, l.href);
-    const cls = `block px-3 py-3.5 rounded-xl transition hover:bg-cream ${active ? "text-ink font-medium" : "text-ink"}`;
+    const cls = `block px-3 py-3.5 rounded-xl transition hover:bg-cream-deep ${active ? "text-ink font-medium" : "text-ink"}`;
 
     if (!l.children) return `    <a href="${prefix}${l.href}" class="${cls}">${l.label}</a>`;
 
     const sub = l.children
-      .map((c) => `        <a href="${prefix}${c.href}" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream hover:text-ink transition">${c.title}</a>`)
+      .map((c) => `        <a href="${prefix}${c.href}" class="block px-3 py-2.5 rounded-lg text-sm text-ink-soft hover:bg-cream-deep hover:text-ink transition">${c.title}</a>`)
       .join("\n");
 
-    return `    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream transition text-left" aria-expanded="false">
+    return `    <button class="menu-toggle w-full flex items-center justify-between px-3 py-3.5 rounded-xl hover:bg-cream-deep transition text-left" aria-expanded="false">
       <span class="text-ink">${l.label}</span>
       <svg class="chevron transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
     </button>
     <div class="menu-panel grid overflow-hidden">
       <div class="min-h-0 pl-3 pb-1">
-        <a href="${prefix}${l.href}" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream transition">Tüm hizmetler</a>
+        <a href="${prefix}${l.href}" class="block px-3 py-2.5 rounded-lg text-sm font-medium text-ink hover:bg-cream-deep transition">Tüm hizmetler</a>
 ${sub}
       </div>
     </div>`;
@@ -106,7 +106,7 @@ ${sub}
 <aside id="mobile-menu" class="fixed top-0 right-0 z-[60] h-full w-[86%] max-w-sm bg-white translate-x-full transition-transform duration-300 ease-out lg:hidden flex flex-col shadow-2xl" aria-hidden="true" aria-label="Mobil menü">
   <div class="flex items-center justify-between px-5 py-4 border-b border-ink/10 shrink-0">
     ${logo("h-9", prefix)}
-    <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream transition">
+    <button id="menu-close" aria-label="Menüyü kapat" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-cream-deep transition">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
