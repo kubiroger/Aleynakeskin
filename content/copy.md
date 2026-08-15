@@ -195,12 +195,17 @@ eşlik ediyorum.
 
 ### yaklasim
 
-**Başlık:** Yaklaşımım
+**Üst etiket:** Yaklaşımım
+**Başlık:** Oyun, çocuğun işidir.
 
-**Paragraf 1:** Ergoterapi, kişinin kendisi için anlamlı olan etkinliklere
-katılabilmesini destekleyen bir sağlık mesleğidir. Çocuklar söz konusu olduğunda
-bu etkinliklerin başında oyun gelir. Oyun, çocuğun işidir; öğrenmeyi, denemeyi ve
-kendi sınırlarını keşfetmeyi onun içinde yapar.
+Başlık, Paragraf 1'in içinden alındı ve oradan çıkarıldı. Hemen altındaki
+"Öğrenmeyi... onun içinde yapar" cümlesi zaten ona bağlı; başlık cümlenin öznesi
+oluyor. Aynı metin, iki kat daha az düz.
+
+**Paragraf 1** *(giriş — büyük punto, koyu renk)***:** Ergoterapi, kişinin
+kendisi için anlamlı olan etkinliklere katılabilmesini destekleyen bir sağlık
+mesleğidir. Çocuklar söz konusu olduğunda bu etkinliklerin başında oyun gelir.
+Öğrenmeyi, denemeyi ve kendi sınırlarını keşfetmeyi onun içinde yapar.
 
 **Paragraf 2:** Bu yüzden seanslarımı bir egzersiz listesi olarak değil, çocuğun
 keyif aldığı bir alan olarak kuruyorum. Çocuk oynadığını bilir; arka planda
@@ -218,7 +223,11 @@ bulunduğu noktadan başlayarak ilerliyoruz.
 
 ### nasil-calisiyorum
 
-**Başlık:** Nasıl çalışıyorum
+**Üst etiket:** Çalışma biçimim
+**Başlık:** Süreç boyunca değişmeyen beş ilke
+
+Koyu (`bg-ink`) bantta, beş sütun halinde. Numara kullanılmaz: bunlar bir sıra
+değil, aynı anda geçerli beş ilke; numara olmayan bir sırayı ima ediyordu.
 
 1. **Bütüncül bakıyorum** — Tek bir beceriye değil, çocuğun günlük hayatının
    tamamına bakıyorum.
@@ -293,11 +302,20 @@ madde olarak "bilişsel rehabilitasyon" yazıldı.
 **Hero künyesi:** Biruni Üniversitesi Ergoterapi lisans mezunu · eğitim ve
 seminerler *(bölüme bağlantı)*
 
-### calisma-alani
+### calisma-alani (kapanış)
 
-**Başlık:** Çalışma alanı
+Çalışma alanı ve randevu çağrısı tek bölümde birleşti — ikisi de aynı soruya
+cevap: nerede buluşuyoruz, nasıl başlıyoruz.
+
+**Üst etiket:** Çalışma alanı
+**Başlık:** Şişli'de, yüz yüze
 **Metin:** Seanslar Şişli'deki çalışma alanımda, yüz yüze yapılıyor. Süreçten ve
 çalışmalardan paylaşımları Instagram hesabımda bulabilirsiniz.
+**Bağlantılar:** Adres ve iletişim · @ergoterapist.aleyna
+
+**Kart başlığı:** Çocuğunuz için doğru adımı birlikte belirleyelim
+**Kart metni:** Aklınızdaki soruları konuşmak için kısa bir görüşme yeterli.
+**Kart butonları:** Randevu Talep Edin · Hizmetleri İnceleyin
 
 ---
 

@@ -305,96 +305,145 @@ tailwind.config = { theme: { extend: {
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="bg-cream pt-32 pb-16 sm:pt-40 sm:pb-20 px-6">
-    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <!-- HERO
+       Portre buyudu ve metinle alt hizasindan bulusuyor. Uc adet cerceveli pill
+       kaldirildi: menude zaten var ve sayfayi kutulastiran seylerden biriydi. -->
+  <section class="bg-cream pt-32 pb-16 sm:pt-40 sm:pb-24 px-6">
+    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,1fr)_minmax(0,40%)] gap-12 lg:gap-20 lg:items-end">
       <div>
-        <p class="text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">Ergoterapist</p>
-        <h1 class="font-display text-4xl sm:text-5xl leading-tight mt-3">Aleyna Keskin</h1>
-        <div class="rule-gold mt-5" aria-hidden="true"></div>
-        <p class="text-lg text-ink-soft leading-relaxed mt-6 max-w-lg">
-          Çocukların gelişim alanlarını destekliyor, ailelere bu yolculukta eşlik ediyorum.
+        <p class="flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+          Ergoterapist &middot; Şişli / İstanbul
         </p>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] mt-5">Aleyna Keskin</h1>
+        <p class="text-xl sm:text-2xl leading-relaxed mt-7 max-w-[30ch]">
+          Çocukların gelişim alanlarını destekliyor, ailelere bu yolculukta
+          eşlik ediyorum.
+        </p>
+        <div class="rule-gold mt-9" aria-hidden="true"></div>
         <!-- Diplomanin sayfanin dibindeki listede kalmasi gec: bir ailenin ilk
              sordugu sey bu, o yuzden ilk ekranda duruyor ve listeye baglaniyor. -->
-        <p class="text-sm text-ink-soft mt-4">
+        <p class="text-sm text-ink-soft mt-6">
           Biruni Üniversitesi Ergoterapi lisans mezunu &middot;
           <a href="#egitim" class="text-gold-deep underline underline-offset-4 hover:text-ink transition">eğitim ve seminerler</a>
         </p>
-        <div class="flex flex-wrap gap-2.5 mt-7">
-          <span class="bg-white border border-gold/40 rounded-full px-4 py-2 text-sm">Duyu Bütünleme</span>
-          <span class="bg-white border border-gold/40 rounded-full px-4 py-2 text-sm">Gelişimsel Destek</span>
-          <span class="bg-white border border-gold/40 rounded-full px-4 py-2 text-sm">Aile Danışmanlığı</span>
-        </div>
+        <p class="text-sm text-ink-soft mt-2">Duyu bütünleme &middot; Gelişimsel destek &middot; Aile danışmanlığı</p>
       </div>
       <img src="assets/aleyna-portre.webp" alt="Ergoterapist Aleyna Keskin"
-           width="800" height="880"
-           class="w-full h-[420px] lg:h-[560px] object-cover [object-position:50%_28%] rounded-4xl">
+           width="800" height="880" fetchpriority="high"
+           class="w-full aspect-[4/5] object-cover [object-position:50%_20%] rounded-4xl">
     </div>
   </section>
 
-  <!-- YAKLASIM -->
-  <section id="yaklasim" class="py-16 sm:py-20 px-6 bg-white">
-    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] gap-8 lg:gap-16 fade-up">
-      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl">Yaklaşımım</h2>
-      <div>
-      <div class="prose text-ink-soft max-w-3xl">
-        <p>Ergoterapi, kişinin kendisi için anlamlı olan etkinliklere katılabilmesini destekleyen bir sağlık mesleğidir. Çocuklar söz konusu olduğunda bu etkinliklerin başında oyun gelir. Oyun, çocuğun işidir; öğrenmeyi, denemeyi ve kendi sınırlarını keşfetmeyi onun içinde yapar.</p>
-        <p>Bu yüzden seanslarımı bir egzersiz listesi olarak değil, çocuğun keyif aldığı bir alan olarak kuruyorum. Çocuk oynadığını bilir; arka planda çalıştığımız hedefleri ben takip ederim. Zorlanma anları da sürecin parçası — ama çocuğun kendini yetersiz hissettiği bir zorlanma değil, başarabildiğini gördüğü bir zorlanma olmasına dikkat ediyorum.</p>
-        <p>Aileyi sürecin dışında tutmuyorum. Çocuk haftanın büyük kısmını evde, okulda, parkta geçiriyor; kalıcı değişim de orada oluyor. Seansta ne çalıştığımızı, bunun evde neye karşılık geldiğini ve siz ne yapabilirsiniz — bunları açıkça konuşuyoruz.</p>
-        <p>Her çocuğun kendi hızı var. Karşılaştırma yapmadan, çocuğun bulunduğu noktadan başlayarak ilerliyoruz.</p>
-      </div>
-    
-      </div>
-    </div>
-  </section>
-
-  <!-- NASIL CALISIYORUM -->
-  <section id="nasil-calisiyorum" class="py-20 sm:py-28 px-6 bg-white">
+  <!-- YAKLASIM
+       Baslik artik "Yaklasimim" degil, kendi cumlesi: "Oyun, cocugun isidir."
+       Bu cumle ilk paragraftan alindi ve oradan cikarildi, cunku hemen altindaki
+       "Ogrenmeyi... onun icinde yapar" zaten ona bagli. Baslik cumlenin oznesi
+       oluyor; ayni metin, iki kat daha az duz. -->
+  <section id="yaklasim" class="py-20 sm:py-28 px-6 bg-white">
     <div class="max-w-[1440px] mx-auto">
-      <div class="max-w-2xl fade-up">
+
+      <div class="max-w-3xl fade-up">
         <p class="flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+          Yaklaşımım
+        </p>
+        <h2 class="font-display text-4xl lg:text-5xl leading-[1.1] mt-5">Oyun, çocuğun işidir.</h2>
+      </div>
+
+      <!-- Ilk paragraf giris: buyuk punto, koyu renk. Kalan uc paragraf iki
+           sutunda govde punto. Boyut farki neyin tanim, neyin uygulama
+           oldugunu soyluyor. -->
+      <p class="text-xl sm:text-2xl leading-[1.55] mt-10 max-w-[46ch] fade-up">
+        Ergoterapi, kişinin kendisi için anlamlı olan etkinliklere katılabilmesini
+        destekleyen bir sağlık mesleğidir. Çocuklar söz konusu olduğunda bu
+        etkinliklerin başında oyun gelir. Öğrenmeyi, denemeyi ve kendi sınırlarını
+        keşfetmeyi onun içinde yapar.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-x-14 gap-y-6 mt-12 max-w-5xl fade-up">
+        <p class="text-ink-soft leading-[1.8]">
+          Bu yüzden seanslarımı bir egzersiz listesi olarak değil, çocuğun keyif
+          aldığı bir alan olarak kuruyorum. Çocuk oynadığını bilir; arka planda
+          çalıştığımız hedefleri ben takip ederim. Zorlanma anları da sürecin
+          parçası &mdash; ama çocuğun kendini yetersiz hissettiği bir zorlanma
+          değil, başarabildiğini gördüğü bir zorlanma olmasına dikkat ediyorum.
+        </p>
+        <div class="space-y-6">
+          <p class="text-ink-soft leading-[1.8]">
+            Aileyi sürecin dışında tutmuyorum. Çocuk haftanın büyük kısmını evde,
+            okulda, parkta geçiriyor; kalıcı değişim de orada oluyor. Seansta ne
+            çalıştığımızı, bunun evde neye karşılık geldiğini ve siz ne
+            yapabilirsiniz &mdash; bunları açıkça konuşuyoruz.
+          </p>
+          <p class="text-ink-soft leading-[1.8]">
+            Her çocuğun kendi hızı var. Karşılaştırma yapmadan, çocuğun bulunduğu
+            noktadan başlayarak ilerliyoruz.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Tam genislikte calisma fotografi. Iki metin agirlikli bolgeyi ayiran nefes;
+       ayni zamanda az onceki paragrafin anlattigi seyi gosteriyor. -->
+  <figure class="bg-white">
+    <!-- Kadraj yuzlerden hesaplandi: 16/7'de gorunen pencere kaynagin %45'inden
+         basliyor, boylece iki yuz de ve masadaki calisma iceride kaliyor.
+         Mobilde kirpma yok, gorsel kendi oraninda duruyor. -->
+    <img src="assets/ergoterapi.webp" alt="Masa başında bir çocukla birlikte çalışan ergoterapist"
+         width="1448" height="1086" loading="lazy"
+         class="w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/7] object-cover [object-position:50%_45%]">
+  </figure>
+
+  <!-- NASIL CALISIYORUM -- sayfanin cengeli.
+       Koyu bant: dort ardisik beyaz bolum sayfayi tek duze yapiyordu, buraya bir
+       durak gerekiyordu. Renk paletten geliyor, yeni renk eklenmedi.
+       Numaralar (01..05) kaldirildi: bu bes ilke bir sira degil, ayni anda
+       gecerli bes ilke. Numara sadece suslemeydi ve olmayan bir sirayi ima
+       ediyordu. Yerlerini ilkelerin kendi adlari aldi. -->
+  <section id="nasil-calisiyorum" class="py-20 sm:py-28 px-6 bg-ink text-white">
+    <div class="max-w-[1440px] mx-auto">
+
+      <div class="max-w-2xl fade-up">
+        <p class="flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase text-gold font-medium">
           <span class="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>
           Çalışma biçimim
         </p>
-        <h2 class="font-display text-3xl lg:text-4xl mt-4">Nasıl çalışıyorum</h2>
-        <p class="text-ink-soft leading-relaxed mt-4">Süreç boyunca değişmeyen beş ilke.</p>
+        <h2 class="font-display text-4xl lg:text-5xl leading-[1.1] mt-5 text-white">
+          Süreç boyunca değişmeyen beş ilke
+        </h2>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-0 gap-y-12 lg:gap-y-0 mt-14 fade-up">
-        <div class="group relative lg:pr-8">
-          <span class="block h-px w-10 bg-gold/50 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span class="block font-display text-4xl text-gold/40 group-hover:text-gold transition-colors duration-300 mt-6">01</span>
-          <h3 class="font-display text-xl mt-4 leading-snug">Bütüncül bakıyorum</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mt-3">Tek bir beceriye değil, çocuğun günlük hayatının tamamına bakıyorum.</p>
+      <!-- Ust cizgi, yan cizgi degil: yan cizgide ilk ve son sutunu ayri ayri
+           kayirmak gerekiyor ve mobile dustugunde hicbir sey ayirmiyor. -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10 mt-16 fade-up">
+        <div class="pt-6 border-t border-white/20">
+          <h3 class="font-display text-xl text-gold leading-snug">Bütüncül bakıyorum</h3>
+          <p class="text-[15px] text-white/70 leading-relaxed mt-3">Tek bir beceriye değil, çocuğun günlük hayatının tamamına bakıyorum.</p>
         </div>
-        <div class="group relative lg:px-8 lg:border-l lg:border-gold/25">
-          <span class="block h-px w-10 bg-gold/50 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span class="block font-display text-4xl text-gold/40 group-hover:text-gold transition-colors duration-300 mt-6">02</span>
-          <h3 class="font-display text-xl mt-4 leading-snug">Oyunun içinden geçiyorum</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mt-3">Hedefler masaya değil, oyuna yerleşiyor.</p>
+        <div class="pt-6 border-t border-white/20">
+          <h3 class="font-display text-xl text-gold leading-snug">Oyunun içinden geçiyorum</h3>
+          <p class="text-[15px] text-white/70 leading-relaxed mt-3">Hedefler masaya değil, oyuna yerleşiyor.</p>
         </div>
-        <div class="group relative lg:px-8 lg:border-l lg:border-gold/25">
-          <span class="block h-px w-10 bg-gold/50 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span class="block font-display text-4xl text-gold/40 group-hover:text-gold transition-colors duration-300 mt-6">03</span>
-          <h3 class="font-display text-xl mt-4 leading-snug">Aileyi ortak alıyorum</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mt-3">Ev programı sürecin süsü değil, omurgası.</p>
+        <div class="pt-6 border-t border-white/20">
+          <h3 class="font-display text-xl text-gold leading-snug">Aileyi ortak alıyorum</h3>
+          <p class="text-[15px] text-white/70 leading-relaxed mt-3">Ev programı sürecin süsü değil, omurgası.</p>
         </div>
-        <div class="group relative lg:px-8 lg:border-l lg:border-gold/25">
-          <span class="block h-px w-10 bg-gold/50 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span class="block font-display text-4xl text-gold/40 group-hover:text-gold transition-colors duration-300 mt-6">04</span>
-          <h3 class="font-display text-xl mt-4 leading-snug">Şeffaf ilerliyorum</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mt-3">Hangi hedefte olduğumuzu ve neden orada olduğumuzu biliyorsunuz.</p>
+        <div class="pt-6 border-t border-white/20">
+          <h3 class="font-display text-xl text-gold leading-snug">Şeffaf ilerliyorum</h3>
+          <p class="text-[15px] text-white/70 leading-relaxed mt-3">Hangi hedefte olduğumuzu ve neden orada olduğumuzu biliyorsunuz.</p>
         </div>
-        <div class="group relative lg:pl-8 lg:border-l lg:border-gold/25">
-          <span class="block h-px w-10 bg-gold/50 group-hover:w-full transition-all duration-500 ease-out"></span>
-          <span class="block font-display text-4xl text-gold/40 group-hover:text-gold transition-colors duration-300 mt-6">05</span>
-          <h3 class="font-display text-xl mt-4 leading-snug">Sınırlarımı biliyorum</h3>
-          <p class="text-sm text-ink-soft leading-relaxed mt-3">İhtiyaç gördüğümde başka uzmanlara yönlendiriyorum. Her sorunun cevabı ergoterapide değil.</p>
+        <div class="pt-6 border-t border-white/20">
+          <h3 class="font-display text-xl text-gold leading-snug">Sınırlarımı biliyorum</h3>
+          <p class="text-[15px] text-white/70 leading-relaxed mt-3">İhtiyaç gördüğümde başka uzmanlara yönlendiriyorum. Her sorunun cevabı ergoterapide değil.</p>
         </div>
       </div>
+
     </div>
   </section>
+
 
   <!-- EGITIM VE MESLEKI GELISIM
        Icerigin tamami musteriden geldigi gibi; buraya hicbir egitim eklenmez.
@@ -502,37 +551,45 @@ tailwind.config = { theme: { extend: {
     </div>
   </section>
 
-  <!-- CALISMA ALANI -->
-  <section id="calisma-alani" class="py-16 sm:py-20 px-6 bg-white">
-    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] gap-8 lg:gap-16 fade-up">
-      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl">Çalışma alanı</h2>
-      <div>
-      <p class="text-ink-soft leading-relaxed mt-5">
-        Seanslar Şişli'deki çalışma alanımda, yüz yüze yapılıyor. Süreçten ve
-        çalışmalardan paylaşımları Instagram hesabımda bulabilirsiniz.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 mt-8">
-        <a href="iletisim.html" class="bg-ink text-white text-center font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition">Adres ve iletişim</a>
-        <a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="border border-ink/15 text-center px-8 py-4 rounded-full hover:bg-cream-deep transition">@ergoterapist.aleyna</a>
-      </div>
-    
-      </div>
-    </div>
-  </section>
+  <!-- KAPANIS
+       "Calisma alani" ve randevu cagrisi tek bolumde birlesti. Ayri iki bolum
+       olduklarinda ikisi de kisa kaliyor ve sayfaya iki bant daha ekliyorlardi;
+       oysa ikisi de ayni soruya cevap: nerede bulusuyoruz, nasil basliyoruz. -->
+  <section id="calisma-alani" class="py-20 sm:py-28 px-6 bg-cream">
+    <div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 lg:items-center fade-up">
 
-  <!-- CTA -->
-  <section class="py-16 sm:py-20 px-6 bg-cream">
-    <div class="max-w-3xl mx-auto text-center fade-up">
-      <h2 class="font-display text-3xl">Çocuğunuz için doğru adımı birlikte belirleyelim</h2>
-      <p class="text-ink-soft leading-relaxed mt-4">Aklınızdaki soruları konuşmak için kısa bir görüşme yeterli.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-        <a href="iletisim.html" class="bg-ink text-white font-medium px-8 py-4 rounded-full hover:bg-ink-mid transition">Randevu Talep Edin</a>
-        <a href="hizmetler.html" class="border border-ink/15 px-8 py-4 rounded-full hover:bg-white transition">Hizmetleri İnceleyin</a>
+      <div>
+        <p class="flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase text-gold-deep font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true"></span>
+          Çalışma alanı
+        </p>
+        <h2 class="font-display text-4xl lg:text-5xl leading-[1.1] mt-5">Şişli'de, yüz yüze</h2>
+        <p class="text-ink-soft leading-relaxed mt-6 max-w-[52ch]">
+          Seanslar Şişli'deki çalışma alanımda, yüz yüze yapılıyor. Süreçten ve
+          çalışmalardan paylaşımları Instagram hesabımda bulabilirsiniz.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="iletisim.html" class="border border-ink/15 px-7 py-3.5 rounded-full hover:bg-white transition">Adres ve iletişim</a>
+          <a href="https://instagram.com/ergoterapist.aleyna" target="_blank" rel="noopener" class="border border-ink/15 px-7 py-3.5 rounded-full hover:bg-white transition">@ergoterapist.aleyna</a>
+        </div>
       </div>
+
+      <div class="yuzey rounded-4xl p-8 sm:p-10">
+        <h3 class="font-display text-2xl sm:text-3xl leading-snug">Çocuğunuz için doğru adımı birlikte belirleyelim</h3>
+        <p class="text-ink-soft leading-relaxed mt-4">
+          Aklınızdaki soruları konuşmak için kısa bir görüşme yeterli.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-8">
+          <a href="iletisim.html" class="bg-ink text-white text-center font-medium px-7 py-3.5 rounded-full hover:bg-ink-mid transition">Randevu Talep Edin</a>
+          <a href="hizmetler.html" class="border border-ink/15 text-center px-7 py-3.5 rounded-full hover:bg-cream-deep transition">Hizmetleri İnceleyin</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
 </main>
+
 
 <!-- BUILD:FOOTER:START -->
 <footer class="bg-ink text-white/80">
