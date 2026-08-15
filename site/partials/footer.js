@@ -39,7 +39,9 @@ ${items}
 function renderFooter(prefix = "", page = "index.html") {
   const year = 2026;
 
-  return `<footer class="bg-ink text-white/80 mt-24">
+  // No top margin: every page's last section carries its own py-16 or more, and
+  // a margin here would show through as a white band from the <body>.
+  return `<footer class="bg-ink text-white/80">
   <div class="max-w-[1440px] mx-auto px-6 py-14 sm:py-16 grid gap-8 md:gap-12 md:grid-cols-3">
 
     <div>

@@ -9,10 +9,16 @@ const SITE = "https://aleynakeskin.vercel.app"; // TODO: alan adi baglanınca ge
 // Design tokens -- the approved "warm earth" palette. Do not swap these for
 // colours sampled from the current logo file: that logo is a placeholder the
 // client may still change.
+//
+// `cream` is the page canvas. It used to be a warm off-white (#FBF8F3); it is
+// now a light tint of the palette's own `sage`, so the flat background of the
+// hero photographs blends into the page instead of ending in a hard rectangle.
+// `gold.soft` lost about half its saturation at the same time -- at full
+// strength it read pink against the greener canvas.
 const TOKENS = {
   ink: { DEFAULT: "#2B2724", soft: "#6B635C", mid: "#453E37" },
-  gold: { DEFAULT: "#C89B6B", deep: "#A97C4F", soft: "#EFE4D5" },
-  cream: { DEFAULT: "#FBF8F3", deep: "#F4EDE3" },
+  gold: { DEFAULT: "#C89B6B", deep: "#A97C4F", soft: "#EBE6DC" },
+  cream: { DEFAULT: "#EFF3EC", deep: "#E6EDE3" },
   terracotta: "#D98E6A",
   sage: "#8FA98B",
 };
@@ -25,7 +31,7 @@ const SHARED_CSS = `
   section[id] { scroll-margin-top: 6.5rem; }
   a, button, input, select, textarea { touch-action: manipulation; }
   :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid #C89B6B; outline-offset: 2px; border-radius: 4px; }
-  .bg-ink :is(a, button, input, select):focus-visible { outline-color: #EFE4D5; }
+  .bg-ink :is(a, button, input, select):focus-visible { outline-color: ${TOKENS.gold.soft}; }
 
   /* Gold rule with a dot -- the divider motif from the business card */
   .rule-gold { display: flex; align-items: center; gap: .5rem; }
@@ -33,7 +39,7 @@ const SHARED_CSS = `
   .rule-gold::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #C89B6B; flex-shrink: 0; }
 
   /* Photo placeholder -- stands in where a real photo of Aleyna or her room goes */
-  .ph-photo { background: #FBF8F3; border: 1px solid #C89B6B; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 320px; }
+  .ph-photo { background: ${TOKENS.cream.DEFAULT}; border: 1px solid #C89B6B; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 320px; }
   .ph-photo span { font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: #A97C4F; }
 
   /* Header: floating pill that expands to a full-width bar on scroll */
