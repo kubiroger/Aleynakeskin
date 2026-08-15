@@ -200,7 +200,7 @@ tailwind.config = { theme: { extend: {
     .tab-item { color: #3A342E; }
   }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Aleyna Keskin","jobTitle":"Ergoterapist","url":"https://aleynakeskin.vercel.app/hakkimda.html","telephone":"+905011774208","email":"aleynaakeskin1@gmail.com","worksFor":{"@id":"https://aleynakeskin.vercel.app/#isletme"},"sameAs":["https://instagram.com/ergoterapist.aleyna"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Aleyna Keskin","jobTitle":"Ergoterapist","url":"https://aleynakeskin.vercel.app/hakkimda.html","telephone":"+905011774208","email":"aleynaakeskin1@gmail.com","worksFor":{"@id":"https://aleynakeskin.vercel.app/#isletme"},"sameAs":["https://instagram.com/ergoterapist.aleyna"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Biruni Üniversitesi","department":{"@type":"EducationalOrganization","name":"Sağlık Bilimleri Fakültesi, Ergoterapi Bölümü"}},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"degree","educationalLevel":"Lisans","about":{"@type":"Thing","name":"Ergoterapi"},"recognizedBy":{"@type":"CollegeOrUniversity","name":"Biruni Üniversitesi"}},"knowsAbout":["Çocuk ergoterapisi","Duyu bütünleme","Pediatrik rehabilitasyon","Bilişsel rehabilitasyon","El rehabilitasyonu","Aile danışmanlığı"]}</script>
 <!-- BUILD:HEAD:END -->
 </head>
 <body class="bg-white text-ink antialiased">
@@ -315,6 +315,12 @@ tailwind.config = { theme: { extend: {
         <p class="text-lg text-ink-soft leading-relaxed mt-6 max-w-lg">
           Çocukların gelişim alanlarını destekliyor, ailelere bu yolculukta eşlik ediyorum.
         </p>
+        <!-- Diplomanin sayfanin dibindeki listede kalmasi gec: bir ailenin ilk
+             sordugu sey bu, o yuzden ilk ekranda duruyor ve listeye baglaniyor. -->
+        <p class="text-sm text-ink-soft mt-4">
+          Biruni Üniversitesi Ergoterapi lisans mezunu &middot;
+          <a href="#egitim" class="text-gold-deep underline underline-offset-4 hover:text-ink transition">eğitim ve seminerler</a>
+        </p>
         <div class="flex flex-wrap gap-2.5 mt-7">
           <span class="bg-white border border-gold/40 rounded-full px-4 py-2 text-sm">Duyu Bütünleme</span>
           <span class="bg-white border border-gold/40 rounded-full px-4 py-2 text-sm">Gelişimsel Destek</span>
@@ -390,23 +396,89 @@ tailwind.config = { theme: { extend: {
     </div>
   </section>
 
-  <!-- EGITIM VE SERTIFIKALAR -->
-  <!--
-    MÜŞTERİDEN: egitim ve sertifika listesi.
-    Liste geldiginde asagidaki section'dan `hidden` sinifini kaldirin ve
-    <li> ogelerini gercek egitimlerle doldurun. Uydurma egitim yazilmaz.
-  -->
-  <section id="egitim" class="hidden py-16 sm:py-20 px-6 bg-white">
+  <!-- EGITIM VE MESLEKI GELISIM
+       Icerigin tamami musteriden geldigi gibi; buraya hicbir egitim eklenmez.
+       Seminerler uc basliga ayrildi cunku listenin bir bolumu yetiskin alanina
+       ait (is sagligi, surucu rehabilitasyonu); duz bir listede bunlar cocuga
+       dair olanlari bogar. Hicbiri cikarilmadi. -->
+  <section id="egitim" class="py-16 sm:py-20 px-6 bg-white">
     <div class="max-w-[1440px] mx-auto grid lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] gap-8 lg:gap-16 fade-up">
-      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl">Eğitim ve sertifikalar</h2>
+      <h2 class="lg:sticky lg:top-28 lg:self-start font-display text-3xl lg:text-4xl">Eğitim ve mesleki gelişim</h2>
       <div>
-      <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-4 lg:mt-0">
-        <li class="flex gap-3.5">
-          <svg class="shrink-0 mt-1 text-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          <span class="text-ink-soft leading-relaxed"><!-- egitim/sertifika --></span>
-        </li>
-      </ul>
-    
+
+        <!-- Diploma once gelir: bir ailenin ilk sorusu budur. -->
+        <ol class="relative border-l border-gold/30 ml-1.5 space-y-8">
+          <li class="pl-7">
+            <span class="absolute -left-[7px] mt-1.5 w-3.5 h-3.5 rounded-full bg-gold ring-4 ring-white" aria-hidden="true"></span>
+            <p class="font-medium">Biruni Üniversitesi &mdash; Ergoterapi (lisans)</p>
+            <p class="text-ink-soft leading-relaxed mt-1.5">
+              Sağlık Bilimleri Fakültesi Ergoterapi bölümündeki lisans eğitimimi
+              tamamladım.
+            </p>
+          </li>
+          <li class="pl-7">
+            <span class="absolute -left-[7px] mt-1.5 w-3.5 h-3.5 rounded-full bg-gold ring-4 ring-white" aria-hidden="true"></span>
+            <p class="font-medium">3. Uluslararası Ergoterapi Kongresi &mdash; sözel sunum</p>
+            <p class="text-ink-soft leading-relaxed mt-1.5">
+              21 Mayıs 2021'de kongrede yürüttüğüm tez konusunu sözel olarak sundum.
+            </p>
+          </li>
+          <li class="pl-7">
+            <span class="absolute -left-[7px] mt-1.5 w-3.5 h-3.5 rounded-full border-2 border-gold bg-white" aria-hidden="true"></span>
+            <p class="font-medium">Atatürk Üniversitesi &mdash; Sosyal Hizmet <span class="text-ink-soft font-normal">(devam ediyor)</span></p>
+            <p class="text-ink-soft leading-relaxed mt-1.5">
+              Çocuğu ailesiyle ve çevresiyle birlikte görebilmek için sosyal hizmet
+              alanında eğitimime devam ediyorum.
+            </p>
+          </li>
+        </ol>
+
+        <p class="text-ink-soft leading-relaxed mt-10">
+          Öğrencilik yıllarımda gönüllü stajlar yaptım; farklı kurumlarda, farklı
+          çocuklarla çalışma fırsatı buldum. Gözlem yapmayı ve gördüğümü yorumlamayı
+          büyük ölçüde orada öğrendim. Stajların yanı sıra bilişsel rehabilitasyon,
+          uzay terapisi, el rehabilitasyonu ve pediatrik rehabilitasyon alanlarında
+          çalışmalarımı sürdürdüm.
+        </p>
+
+        <h3 class="font-display text-xl mt-12">Katıldığım seminer ve eğitimler</h3>
+
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-9 mt-6">
+
+          <div>
+            <p class="text-xs tracking-[0.14em] uppercase text-gold-deep">Çocuk gelişimi ve oyun</p>
+            <ul class="mt-3 space-y-2.5">
+              <li class="text-ink-soft leading-relaxed">Erken çocukluk döneminde oyun gelişimi ve yaşa uygun oyuncak seçiminin önemi</li>
+              <li class="text-ink-soft leading-relaxed">Etkileşimli hikâye anlatma teknikleri</li>
+              <li class="text-ink-soft leading-relaxed">Masal terapisi &mdash; iyileştiren hikâyeler, oyunla bağ kurma</li>
+              <li class="text-ink-soft leading-relaxed">Çocuklar için yoga</li>
+              <li class="text-ink-soft leading-relaxed">Çocuk gelişiminde krize müdahale</li>
+              <li class="text-ink-soft leading-relaxed">Çocuklarda cinsel gelişim, hastanede çocuk gelişimi değerlendirmesi</li>
+              <li class="text-ink-soft leading-relaxed">Resim analizinde vaka örnekleri</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.14em] uppercase text-gold-deep">Değerlendirme ve klinik uygulama</p>
+            <ul class="mt-3 space-y-2.5">
+              <li class="text-ink-soft leading-relaxed">Duyu bütünleme bozukluklarında multidisipliner yaklaşım</li>
+              <li class="text-ink-soft leading-relaxed">Sık kullanılan testler ve ölçekler</li>
+              <li class="text-ink-soft leading-relaxed">İlk görüşme, kullanılan yöntemler ve vaka sunumu</li>
+              <li class="text-ink-soft leading-relaxed">Rehabilitasyonda teknoloji</li>
+            </ul>
+
+            <p class="text-xs tracking-[0.14em] uppercase text-gold-deep mt-9">Ergoterapinin diğer alanları</p>
+            <ul class="mt-3 space-y-2.5">
+              <li class="text-ink-soft leading-relaxed">Fizyoterapi ve ergoterapi ortak sempozyumu</li>
+              <li class="text-ink-soft leading-relaxed">Ruh sağlığında güncel rehabilitasyon yaklaşımları</li>
+              <li class="text-ink-soft leading-relaxed">Ergoterapi ve sosyal model</li>
+              <li class="text-ink-soft leading-relaxed">Çalışma kapasitesini güçlendirme ve işe uyumlandırma</li>
+              <li class="text-ink-soft leading-relaxed">Sürücü rehabilitasyonunda değerlendirme ve müdahale</li>
+              <li class="text-ink-soft leading-relaxed">Genel iş sağlığı ve güvenliği</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>

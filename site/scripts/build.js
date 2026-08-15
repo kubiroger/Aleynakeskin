@@ -136,6 +136,27 @@ const PERSON = {
   email: "aleynaakeskin1@gmail.com",
   worksFor: { "@id": `${SITE}/#isletme` },
   sameAs: ["https://instagram.com/ergoterapist.aleyna"],
+  // Yalniz musteriden gelen, dogrulanabilir bilgiler. Tahmin eklenmez.
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Biruni Üniversitesi",
+    department: { "@type": "EducationalOrganization", name: "Sağlık Bilimleri Fakültesi, Ergoterapi Bölümü" },
+  },
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    credentialCategory: "degree",
+    educationalLevel: "Lisans",
+    about: { "@type": "Thing", name: "Ergoterapi" },
+    recognizedBy: { "@type": "CollegeOrUniversity", name: "Biruni Üniversitesi" },
+  },
+  knowsAbout: [
+    "Çocuk ergoterapisi",
+    "Duyu bütünleme",
+    "Pediatrik rehabilitasyon",
+    "Bilişsel rehabilitasyon",
+    "El rehabilitasyonu",
+    "Aile danışmanlığı",
+  ],
 };
 
 const stripTags = (s) =>

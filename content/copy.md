@@ -231,10 +231,61 @@ bulunduğu noktadan başlayarak ilerliyoruz.
 
 ### egitim
 
-**Başlık:** Eğitim ve sertifikalar
+**Başlık:** Eğitim ve mesleki gelişim
 
-**[MÜŞTERİDEN: eğitim ve sertifika listesi]** — Liste gelene kadar bölüm gizli
-kalır. Uydurma eğitim veya sertifika yazılmaz.
+Tamamı müşteriden geldiği gibidir. Buraya hiçbir eğitim eklenmez.
+
+**Zaman çizgisi**
+
+1. **Biruni Üniversitesi — Ergoterapi (lisans)**
+   Sağlık Bilimleri Fakültesi Ergoterapi bölümündeki lisans eğitimimi tamamladım.
+2. **3. Uluslararası Ergoterapi Kongresi — sözel sunum**
+   21 Mayıs 2021'de kongrede yürüttüğüm tez konusunu sözel olarak sundum.
+3. **Atatürk Üniversitesi — Sosyal Hizmet (devam ediyor)**
+   Çocuğu ailesiyle ve çevresiyle birlikte görebilmek için sosyal hizmet
+   alanında eğitimime devam ediyorum.
+
+**Metin:** Öğrencilik yıllarımda gönüllü stajlar yaptım; farklı kurumlarda,
+farklı çocuklarla çalışma fırsatı buldum. Gözlem yapmayı ve gördüğümü
+yorumlamayı büyük ölçüde orada öğrendim. Stajların yanı sıra bilişsel
+rehabilitasyon, uzay terapisi, el rehabilitasyonu ve pediatrik rehabilitasyon
+alanlarında çalışmalarımı sürdürdüm.
+
+**Alt başlık:** Katıldığım seminer ve eğitimler
+
+On yedi seminer üç gruba ayrıldı. Sebebi: listenin bir bölümü yetişkin alanına
+ait (iş sağlığı, sürücü rehabilitasyonu, işe uyumlandırma); düz bir listede
+bunlar çocuğa dair olanları boğuyordu. Hiçbiri çıkarılmadı.
+
+*Çocuk gelişimi ve oyun*
+- Erken çocukluk döneminde oyun gelişimi ve yaşa uygun oyuncak seçiminin önemi
+- Etkileşimli hikâye anlatma teknikleri
+- Masal terapisi — iyileştiren hikâyeler, oyunla bağ kurma
+- Çocuklar için yoga
+- Çocuk gelişiminde krize müdahale
+- Çocuklarda cinsel gelişim, hastanede çocuk gelişimi değerlendirmesi
+- Resim analizinde vaka örnekleri
+
+*Değerlendirme ve klinik uygulama*
+- Duyu bütünleme bozukluklarında multidisipliner yaklaşım
+- Sık kullanılan testler ve ölçekler
+- İlk görüşme, kullanılan yöntemler ve vaka sunumu
+- Rehabilitasyonda teknoloji
+
+*Ergoterapinin diğer alanları*
+- Fizyoterapi ve ergoterapi ortak sempozyumu
+- Ruh sağlığında güncel rehabilitasyon yaklaşımları
+- Ergoterapi ve sosyal model
+- Çalışma kapasitesini güçlendirme ve işe uyumlandırma
+- Sürücü rehabilitasyonunda değerlendirme ve müdahale
+- Genel iş sağlığı ve güvenliği
+
+**Not:** Müşterinin gönderdiği listede "Kognitif rehabilitasyon" ve "Bilişsel
+rehabilitasyon" ayrı iki madde olarak geçiyordu. İkisi aynı şeydir; sayfada tek
+madde olarak "bilişsel rehabilitasyon" yazıldı.
+
+**Hero künyesi:** Biruni Üniversitesi Ergoterapi lisans mezunu · eğitim ve
+seminerler *(bölüme bağlantı)*
 
 ### calisma-alani
 

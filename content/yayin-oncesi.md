@@ -17,9 +17,11 @@ geçmeden önce aşağıdakiler tamamlanmalı.
 
 ## Müşteriden beklenen içerik
 
-- [ ] **Eğitim ve sertifika listesi.** `hakkimda.html` içindeki `#egitim`
-      bölümü `hidden` durumda; liste gelince sınıfı kaldırıp `<li>`'leri
-      doldurun. Uydurma eğitim yazılmaz.
+- [x] **Eğitim ve sertifika listesi.** Geldi ve yayında. `hakkimda.html`
+      içindeki `#egitim` bölümü açıldı: lisans, kongre sunumu ve devam eden
+      eğitim bir zaman çizgisinde, 17 seminer üç başlık altında. Diploma ayrıca
+      sayfanın ilk ekranında künye satırı olarak duruyor ve `Person` yapısal
+      verisine `alumniOf` / `hasCredential` olarak işlendi.
 - [ ] **Çalışma saatleri.** `scripts/build.js` içindeki `BUSINESS` şemasına
       `openingHoursSpecification` olarak eklenecek; şu an bilerek boş.
 - [ ] **Klinik / çalışma alanı fotoğrafları.** İletişim sayfası için.
