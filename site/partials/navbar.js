@@ -55,7 +55,7 @@ ${panel}
   }).join("\n");
 
   return `<header id="site-header" class="fixed top-4 inset-x-0 z-50 px-4">
-  <div class="relative max-w-[1440px] mx-auto bg-white/95 backdrop-blur rounded-2xl shadow-lg shadow-ink/5">
+  <div class="relative max-w-[1440px] mx-auto bg-white/70 rounded-2xl shadow-lg shadow-ink/5">
     <div class="flex items-center justify-between pl-4 pr-2 py-2.5">
       <a href="${prefix}index.html" class="shrink-0" aria-label="Anasayfa">${logo("h-10", prefix)}</a>
 
@@ -171,8 +171,15 @@ const NAVBAR_SCRIPT = `<script>
   genis.addEventListener("change", footerSenkron);
   footerSenkron();
 
+  // Ayni anda goruntuye giren kardesler blok halinde degil, sirayla belirir.
+  // Gecikme 60ms ile artar ve 240ms'te durur -- daha uzunu bekletmeye baslar.
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+    const gelenler = entries.filter(e => e.isIntersecting);
+    gelenler.forEach((e, i) => {
+      e.target.style.transitionDelay = Math.min(i * 60, 240) + "ms";
+      e.target.classList.add("visible");
+      io.unobserve(e.target);
+    });
   }, { rootMargin: "0px 0px -10% 0px" });
   document.querySelectorAll(".fade-up").forEach(el => io.observe(el));
 })();

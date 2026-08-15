@@ -27,24 +27,43 @@ const SHARED_CSS = `
   html { scroll-behavior: smooth; color-scheme: light; }
   html, body { overflow-x: clip; }
   body { font-family: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  h1, h2, h3, .font-display { font-family: "Playfair Display", Georgia, serif; letter-spacing: -0.01em; text-wrap: balance; }
+  h1, h2, h3, .font-display { font-family: "Playfair Display", Georgia, serif; text-wrap: balance; letter-spacing: -0.01em; }
+
+  /* Harf araligi punto ile degisir: harfler buyudukce aralari fazla acilmis
+     gorunur, kuculdukce sikisir. Tek bir deger her boyutta dogru olamaz.
+     Tailwind'in text-* siniflarina dayanamayiz: basliklar duyarli olduklari
+     icin ayni anda text-4xl ve lg:text-7xl tasiyorlar, o yuzden hangi boyda
+     olduklari sinif listesinden anlasilmiyor. Etiketin kendisine baglaniyoruz;
+     .font-display siniftan geldigi icin ozgulugu esitlemek gerekiyor. */
+  h1, h1.font-display { letter-spacing: -0.025em; }
+  h2, h2.font-display { letter-spacing: -0.016em; }
+  h3, h3.font-display { letter-spacing: -0.008em; }
   section[id] { scroll-margin-top: 6.5rem; }
   a, button, input, select, textarea { touch-action: manipulation; }
   :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid #C89B6B; outline-offset: 2px; border-radius: 4px; }
   .bg-ink :is(a, button, input, select):focus-visible { outline-color: ${TOKENS.gold.soft}; }
+
+  /* Basma geri bildirimi. Dokunmatikte hover yok: bu kural olmadan bir butona
+     basildigi, sayfa degisene kadar hicbir sekilde belli olmuyordu.
+     Yalnizca a/button eslesir, rozet ve etiket <span>'leri disarida kalir. */
+  :is(a, button)[class*="rounded-"], .card {
+    transition: transform .14s cubic-bezier(.2,0,0,1);
+    -webkit-tap-highlight-color: transparent;
+  }
+  :is(a, button)[class*="rounded-"]:active { transform: scale(.97); }
+  .card:active { transform: scale(.99); }
 
   /* Gold rule with a dot -- the divider motif from the business card */
   .rule-gold { display: flex; align-items: center; gap: .5rem; }
   .rule-gold::before { content: ""; height: 1px; width: 100%; max-width: 8rem; background: linear-gradient(to right, #C89B6B, rgba(200,155,107,.25)); }
   .rule-gold::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #C89B6B; flex-shrink: 0; }
 
-  /* Photo placeholder -- stands in where a real photo of Aleyna or her room goes */
-  .ph-photo { background: ${TOKENS.cream.DEFAULT}; border: 1px solid #C89B6B; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; min-height: 320px; }
-  .ph-photo span { font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: #A97C4F; }
-
-  /* Header: floating pill that expands to a full-width bar on scroll */
+  /* Header: floating pill that expands to a full-width bar on scroll.
+     Gercek bir malzeme gibi davranmasi icin altindaki icerik gorunur kalir --
+     %95 opakligin arkasinda blur'un hicbir etkisi yoktu. */
   #site-header { transition: top .4s cubic-bezier(.4,0,.2,1), padding .4s cubic-bezier(.4,0,.2,1); }
-  #site-header > div { transition: max-width .4s cubic-bezier(.4,0,.2,1), border-radius .4s cubic-bezier(.4,0,.2,1), box-shadow .4s ease; }
+  #site-header > div { transition: max-width .4s cubic-bezier(.4,0,.2,1), border-radius .4s cubic-bezier(.4,0,.2,1), box-shadow .4s ease;
+    -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); }
   #site-header.scrolled { top: 0; padding: 0; }
   #site-header.scrolled > div { max-width: 100%; border-radius: 0; }
 
@@ -64,17 +83,14 @@ const SHARED_CSS = `
   .menu-panel.open { grid-template-rows: 1fr; }
   .menu-toggle[aria-expanded="true"] .chevron { transform: rotate(90deg); }
 
-  /* Scroll-in reveal */
-  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  /* Scroll-in reveal. 800ms icerigi geciktiriyordu; 450ms'te bolum okunmaya
+     hazir oluyor. Kardes ogeler build.js'in verdigi gecikmeyle sirayla gelir. */
+  .fade-up { opacity: 0; transform: translateY(14px); transition: opacity .45s cubic-bezier(.2,0,0,1), transform .45s cubic-bezier(.2,0,0,1); }
   .fade-up.visible { opacity: 1; transform: none; }
 
   /* Cards */
-  .card-img { transition: transform .7s ease; }
+  .card-img { transition: transform .5s cubic-bezier(.2,0,0,1); }
   .card:hover .card-img { transform: scale(1.04); }
-  .expand-row { display: flex; gap: 1.25rem; }
-  .expand-row .card { flex: 1 1 0%; transition: flex-grow .6s cubic-bezier(.4,0,.2,1); min-width: 0; }
-  .expand-row .card:hover { flex-grow: 1.5; }
-  @media (max-width: 767px) { .expand-row { flex-direction: column; } .expand-row .card:hover { flex-grow: 1; } }
 
   /* Process timeline with a scroll-driven fill */
   .tl-line, #tl-fill { position: absolute; left: 11px; top: 0; width: 3px; border-radius: 2px; }
@@ -141,10 +157,24 @@ const SHARED_CSS = `
     html { scroll-behavior: auto; }
     #site-header, #site-header > div, .dropdown-panel, .menu-panel, .chevron,
     #menu-btn .menu-line, #tl-fill, .tl-marker, .tl-marker::after, .faq-icon { transition: none !important; }
-    .fade-up { opacity: 1; transform: none; transition: none; }
-    .card-img, .expand-row .card { transition: none !important; }
-    .expand-row .card:hover { flex-grow: 1; }
+    /* Hareket kalkar ama geri bildirim kalir: kaydirma yerine kisa bir cross-fade. */
+    .fade-up { transform: none; transition: opacity .2s ease; transition-delay: 0ms !important; }
+    .card-img { transition: none !important; }
     .card:hover .card-img { transform: none; }
+    :is(a, button)[class*="rounded-"]:active, .card:active { transform: none; }
+  }
+
+  /* Saydamligi azaltilmis sistemde malzeme donuklasir, cam gitmez. */
+  @media (prefers-reduced-transparency: reduce) {
+    #site-header > div { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    #tab-bar { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  }
+
+  /* Yuksek kontrast: yuzeyler tam opak ve sinirlari tanimli olur. */
+  @media (prefers-contrast: more) {
+    #site-header > div { background: #fff; border: 1px solid ${TOKENS.ink.DEFAULT}; }
+    #tab-bar { background: #fff; border-top-color: ${TOKENS.ink.DEFAULT}; }
+    .tab-item { color: ${TOKENS.ink.mid}; }
   }
 `;
 
