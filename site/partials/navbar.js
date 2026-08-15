@@ -164,6 +164,13 @@ const NAVBAR_SCRIPT = `<script>
     });
   });
 
+  // Footer bolumleri: mobilde kapali, tabletten itibaren acik. HTML'de acik
+  // dogarlar, boylece masaustunde acilip kapanma titremesi olmaz.
+  const genis = window.matchMedia("(min-width: 768px)");
+  const footerSenkron = () => document.querySelectorAll("footer .footer-group").forEach(d => { d.open = genis.matches; });
+  genis.addEventListener("change", footerSenkron);
+  footerSenkron();
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
   }, { rootMargin: "0px 0px -10% 0px" });

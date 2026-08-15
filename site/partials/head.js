@@ -126,10 +126,8 @@ const SHARED_CSS = `
   .footer-group[open] > summary .footer-chevron { transform: rotate(180deg); }
   .footer-chevron { transition: transform .25s ease; opacity: .6; }
   .footer-panel { padding-bottom: .75rem; }
-  .footer-group:not([open]) > .footer-panel { display: none; }
   @media (min-width: 768px) {
     .footer-group > summary { border-top: 0; padding: 0 0 1rem; cursor: default; pointer-events: none; }
-    .footer-group:not([open]) > .footer-panel { display: block; }
     .footer-panel { padding-bottom: 0; }
   }
 

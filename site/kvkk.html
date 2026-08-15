@@ -148,10 +148,8 @@ tailwind.config = { theme: { extend: {
   .footer-group[open] > summary .footer-chevron { transform: rotate(180deg); }
   .footer-chevron { transition: transform .25s ease; opacity: .6; }
   .footer-panel { padding-bottom: .75rem; }
-  .footer-group:not([open]) > .footer-panel { display: none; }
   @media (min-width: 768px) {
     .footer-group > summary { border-top: 0; padding: 0 0 1rem; cursor: default; pointer-events: none; }
-    .footer-group:not([open]) > .footer-panel { display: block; }
     .footer-panel { padding-bottom: 0; }
   }
 
@@ -345,7 +343,7 @@ tailwind.config = { theme: { extend: {
       <p class="text-sm mt-2 text-white/60">Duyu Bütünleme &bull; Gelişimsel Destek</p>
     </div>
 
-    <details class="footer-group">
+    <details class="footer-group" open>
       <summary>
         <h2 class="text-white font-medium text-sm tracking-wide uppercase">Hizmetler</h2>
         <svg class="footer-chevron md:hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -361,7 +359,7 @@ tailwind.config = { theme: { extend: {
       </div>
     </details>
 
-    <details class="footer-group">
+    <details class="footer-group" open>
       <summary>
         <h2 class="text-white font-medium text-sm tracking-wide uppercase">İletişim</h2>
         <svg class="footer-chevron md:hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
@@ -460,6 +458,13 @@ tailwind.config = { theme: { extend: {
       panel.classList.toggle("open", !isOpen);
     });
   });
+
+  // Footer bolumleri: mobilde kapali, tabletten itibaren acik. HTML'de acik
+  // dogarlar, boylece masaustunde acilip kapanma titremesi olmaz.
+  const genis = window.matchMedia("(min-width: 768px)");
+  const footerSenkron = () => document.querySelectorAll("footer .footer-group").forEach(d => { d.open = genis.matches; });
+  genis.addEventListener("change", footerSenkron);
+  footerSenkron();
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
