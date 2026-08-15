@@ -14,8 +14,6 @@ geçmeden önce aşağıdakiler tamamlanmalı.
       içinde de güncelleyin.
 - [ ] **Web3Forms endpoint'i.** `iletisim.html` içindeki formun `data-endpoint`
       özniteliği boş; doldurulana kadar form gönderimi WhatsApp'a yönleniyor.
-- [ ] **Favicon'lar.** `assets/favicon*.png`, `favicon.ico` ve
-      `apple-touch-icon.png` hâlâ eski markadan kalma; logodan yeniden üretilmeli.
 
 ## Müşteriden beklenen içerik
 
@@ -44,3 +42,4 @@ geçmeden önce aşağıdakiler tamamlanmalı.
 - Meta başlık ve açıklama uzunlukları 15 sayfada da sınırlar içinde
 - Tüm iç bağlantılar ve 79 görsel yolu çalışıyor
 - Metinlerde tıbbi vaat, süre garantisi veya üstünlük iddiası yok
+- Favicon, apple-touch-icon ve paylaşım kartı yeni logodan üretildi

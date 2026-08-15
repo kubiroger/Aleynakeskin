@@ -113,7 +113,7 @@ const BUSINESS = {
   telephone: "+905011774208",
   email: "aleynaakeskin1@gmail.com",
   image: `${SITE}/assets/og-image.jpg`,
-  logo: `${SITE}/assets/logo.png`,
+  logo: `${SITE}/assets/logo.webp`,
   address: {
     "@type": "PostalAddress",
     streetAddress: "Esentepe Mah. Kasap Sk. Aslan Apt. No: 11 D: 4",

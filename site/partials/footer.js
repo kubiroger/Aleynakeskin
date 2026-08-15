@@ -43,7 +43,7 @@ function renderFooter(prefix = "", page = "index.html") {
   <div class="max-w-[1440px] mx-auto px-6 py-14 sm:py-16 grid gap-8 md:gap-12 md:grid-cols-3">
 
     <div>
-      <img src="${prefix}assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="h-11 w-auto brightness-0 invert opacity-95">
+      <img src="${prefix}assets/logo.webp" alt="Ergoterapist Aleyna Keskin" width="1034" height="254" class="h-11 w-auto brightness-0 invert opacity-95">
       <p class="font-display text-xl text-white mt-5">Birlikte Mutlu Yarınlara</p>
       <p class="text-sm mt-2 text-white/60">Duyu Bütünleme &bull; Gelişimsel Destek</p>
     </div>

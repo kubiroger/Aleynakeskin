@@ -20,7 +20,7 @@ const LINKS = [
 ];
 
 const logo = (cls, prefix) =>
-  `<img src="${prefix}assets/logo.png" alt="Ergoterapist Aleyna Keskin" width="798" height="250" class="${cls} w-auto">`;
+  `<img src="${prefix}assets/logo.webp" alt="Ergoterapist Aleyna Keskin" width="1034" height="254" class="${cls} w-auto">`;
 
 const isActive = (page, href) => href === page || (page === "index.html" && href === "index.html");
 

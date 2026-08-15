@@ -14,12 +14,12 @@ bırakacak şekilde hazırlanmıştır. Her biri iki dosyaya çevrilir: tam kadr
 |---|---|---|
 | `assets/hero-anasayfa.webp` | Adaçayı-gri | Anasayfa hero |
 | `assets/aleyna-portre.webp` | — | Hakkımda hero'su ve anasayfa tanıtımı |
-| `assets/ergoterapi.webp` + `-kart` | Şeftali | Ergoterapi sayfası ve kartları |
-| `assets/duyu-butunleme.webp` + `-kart` | Pembe | Duyu Bütünleme sayfası ve kartları |
-| `assets/oz-bakim.webp` + `-kart` | Yeşil | Öz Bakım sayfası ve kartları |
-| `assets/gunluk-yasam.webp` + `-kart` | Sarı | Günlük Yaşam sayfası ve kartları |
-| `assets/aile-danismanlik.webp` + `-kart` | Mavi | Aile Danışmanlığı sayfası ve kartları |
-| `assets/logo.png` | — | Navbar ve footer |
+| `assets/ergoterapi.webp` | Şeftali | Ergoterapi sayfası ve kartları |
+| `assets/duyu-butunleme.webp` | Pembe | Duyu Bütünleme sayfası ve kartları |
+| `assets/oz-bakim.webp` | Yeşil | Öz Bakım sayfası ve kartları |
+| `assets/gunluk-yasam.webp` | Sarı | Günlük Yaşam sayfası ve kartları |
+| `assets/aile-danismanlik.webp` | Mavi | Aile Danışmanlığı sayfası ve kartları |
+| `assets/logo.webp` | — | Navbar, footer, favicon ve paylaşım kartı |
 
 Müşteri iki alternatif göndermişti: ergoterapi için gri yerine şeftali,
 öz bakım için mor yerine yeşil seçildi — gri palete soğuk kaçıyordu, mor ise
