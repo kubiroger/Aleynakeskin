@@ -34,14 +34,22 @@ Kaynak: müşterinin kartviziti (krem zemin, altın-bej vurgu, siyah serif isim,
 
 | Rol | Hex | Kullanım |
 |---|---|---|
-| `cream` | `#FBF8F3` | Sayfa zemini, kart arka planı |
+| `cream` | `#EFF3EC` | Sayfa zemini, kart arka planı |
+| `cream-deep` | `#E6EDE3` | Zeminin bir ton koyusu |
 | `gold` | `#C89B6B` | Birincil vurgu, butonlar, ayraç çizgileri, ikon dolguları |
+| `gold-soft` | `#EBE6DC` | Rozet ve şerit zeminleri, koyu bölümlerde odak halkası |
 | `gold-deep` | `#A97C4F` | Hover, altın üstü metin kontrastı |
 | `terracotta` | `#D98E6A` | İkincil vurgu — sıcaklık, çocuk temalı bölümler |
 | `sage` | `#8FA98B` | Üçüncül vurgu — sakinlik, süreç/timeline bölümleri |
 | `ink` | `#2B2724` | Ana metin, başlıklar |
 | `ink-soft` | `#6B635C` | İkincil metin |
 | `white` | `#FFFFFF` | Yükseltilmiş kartlar, form alanları |
+
+Zemin başlangıçta sıcak bir kırık beyazdı (`#FBF8F3`). Hero fotoğraflarının düz
+arka planı (`#C9C1AC`) sayfa üstünde belirgin bir dikdörtgen olarak durduğu için
+zemin, paletin kendi `sage` tonunun açık varyantına taşındı; iki yüzey artık
+keskin bir kenarla karşılaşmıyor. `gold-soft` aynı anda doygunluğunun yaklaşık
+yarısını bıraktı — tam gücünde yeşilimsi zeminin yanında pembe okunuyordu.
 
 Kural: altın **vurgu** rengidir, geniş alan doldurmaz. Terracotta ve sage yardımcıdır; bir
 bölümde ikisi birden kullanılmaz.

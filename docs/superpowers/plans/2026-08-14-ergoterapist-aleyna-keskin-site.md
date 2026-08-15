@@ -15,8 +15,9 @@
 Bu kısıtlar **her task için geçerlidir**, tekrar edilmese bile.
 
 **Renk paleti** (yalnız bu hex'ler kullanılır):
-- `cream` `#FBF8F3` — sayfa zemini, kart arka planı
+- `cream` `#EFF3EC` — sayfa zemini, kart arka planı
 - `gold` `#C89B6B` — birincil vurgu, butonlar, ayraçlar
+- `gold-soft` `#EBE6DC` — rozet ve şerit zeminleri
 - `gold-deep` `#A97C4F` — hover, altın üstü metin
 - `terracotta` `#D98E6A` — ikincil vurgu
 - `sage` `#8FA98B` — üçüncül vurgu
